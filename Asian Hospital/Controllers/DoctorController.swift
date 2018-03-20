@@ -16,7 +16,7 @@ class DoctorController: UIViewController {
     
     var doctors: [Doctor]? {
         didSet {
-            self.performSegue(withIdentifier: "showDoctorSearchResults", sender: self)
+            performSegue(withIdentifier: "showDoctorSearchResults", sender: self)
         }
     }
     
@@ -34,7 +34,7 @@ class DoctorController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDoctorSearchResults" {
             if let searchResultsController = segue.destination as? DoctorSearchResultsController {
-                searchResultsController.doctors = self.doctors
+                searchResultsController.doctors = doctors
             }
         }
     }

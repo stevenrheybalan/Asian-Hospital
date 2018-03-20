@@ -28,5 +28,4 @@ class HopprlabClient: APIClient {
             return doctors.flatMap { Doctor(json: $0) }
         }, completion: completion)
     }
-    
 }

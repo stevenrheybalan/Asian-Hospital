@@ -63,7 +63,7 @@ class Doctor: JSONDecodable {
     
     class Specialization: JSONDecodable {
         let specialty: String
-        let subSpecialization: String?
+        let subSpecialty: String?
         
         required init?(json: [String : Any]) {
             struct Key {
@@ -74,7 +74,7 @@ class Doctor: JSONDecodable {
             guard let specialty = json["specialty_name"] as? String else { return nil }
             
             self.specialty = specialty
-            self.subSpecialization = json["sub_specialty_name"] as? String
+            self.subSpecialty = json["sub_specialty_name"] as? String
         }
     }
 }

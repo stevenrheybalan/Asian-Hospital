@@ -27,6 +27,19 @@ class DoctorSearchResultsController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: NAVIGATION
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDoctorDetails" {
+            if let doctorDetailController = segue.destination as? DoctorDetailController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                
+                let doctor = doctors[indexPath.row]
+                doctorDetailController.doctor = doctor
+            }
+        }
+    }
+    
     // MARK: TABLE VIEW DELEGATE
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

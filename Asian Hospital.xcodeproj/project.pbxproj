@@ -23,6 +23,7 @@
 		7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */; };
 		7277153E2060D916003B53FC /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153D2060D916003B53FC /* DoctorCell.swift */; };
 		727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153F2060D986003B53FC /* DoctorCellViewModel.swift */; };
+		727715422060F269003B53FC /* DoctorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727715412060F269003B53FC /* DoctorDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchResultsDataSource.swift; sourceTree = "<group>"; };
 		7277153D2060D916003B53FC /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		7277153F2060D986003B53FC /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
+		727715412060F269003B53FC /* DoctorDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				7274A2B6205FA4FB004A85E3 /* DoctorController.swift */,
 				7274A2B8205FA542004A85E3 /* DoctorSearchResultsController.swift */,
+				727715412060F269003B53FC /* DoctorDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				7246B224205F76BE0094DC45 /* Result.swift in Sources */,
 				7246B227205F78780094DC45 /* Doctor.swift in Sources */,
 				7246B221205F76BE0094DC45 /* HopprlabClient.swift in Sources */,
+				727715422060F269003B53FC /* DoctorDetailController.swift in Sources */,
 				7274A2B7205FA4FB004A85E3 /* DoctorController.swift in Sources */,
 				7246B223205F76BE0094DC45 /* JSONDecodable.swift in Sources */,
 				7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */,
