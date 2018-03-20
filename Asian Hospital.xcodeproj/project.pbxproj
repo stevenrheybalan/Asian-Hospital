@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B1FE205F6EA50094DC45 /* AppDelegate.swift */; };
-		7246B201205F6EA50094DC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B200205F6EA50094DC45 /* ViewController.swift */; };
 		7246B204205F6EA50094DC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7246B202205F6EA50094DC45 /* Main.storyboard */; };
 		7246B206205F6EA50094DC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7246B205205F6EA50094DC45 /* Assets.xcassets */; };
 		7246B209205F6EA50094DC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7246B207205F6EA50094DC45 /* LaunchScreen.storyboard */; };
@@ -19,12 +18,16 @@
 		7246B224205F76BE0094DC45 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B21F205F76BE0094DC45 /* Result.swift */; };
 		7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B220205F76BE0094DC45 /* Endpoint.swift */; };
 		7246B227205F78780094DC45 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B226205F78780094DC45 /* Doctor.swift */; };
+		7274A2B7205FA4FB004A85E3 /* DoctorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274A2B6205FA4FB004A85E3 /* DoctorController.swift */; };
+		7274A2B9205FA542004A85E3 /* DoctorSearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274A2B8205FA542004A85E3 /* DoctorSearchResultsController.swift */; };
+		7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */; };
+		7277153E2060D916003B53FC /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153D2060D916003B53FC /* DoctorCell.swift */; };
+		727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153F2060D986003B53FC /* DoctorCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7246B1FB205F6EA50094DC45 /* Asian Hospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asian Hospital.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7246B1FE205F6EA50094DC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7246B200205F6EA50094DC45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7246B203205F6EA50094DC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7246B205205F6EA50094DC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7246B208205F6EA50094DC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +40,11 @@
 		7246B21F205F76BE0094DC45 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7246B220205F76BE0094DC45 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7246B226205F78780094DC45 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		7274A2B6205FA4FB004A85E3 /* DoctorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorController.swift; sourceTree = "<group>"; };
+		7274A2B8205FA542004A85E3 /* DoctorSearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchResultsController.swift; sourceTree = "<group>"; };
+		7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchResultsDataSource.swift; sourceTree = "<group>"; };
+		7277153D2060D916003B53FC /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
+		7277153F2060D986003B53FC /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			children = (
 				7246B202205F6EA50094DC45 /* Main.storyboard */,
 				7246B207205F6EA50094DC45 /* LaunchScreen.storyboard */,
+				7277153C2060D8F9003B53FC /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,7 +122,8 @@
 		7246B216205F75F60094DC45 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7246B200205F6EA50094DC45 /* ViewController.swift */,
+				7274A2B6205FA4FB004A85E3 /* DoctorController.swift */,
+				7274A2B8205FA542004A85E3 /* DoctorSearchResultsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,11 +131,11 @@
 		7246B217205F75FD0094DC45 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7246B21D205F76BD0094DC45 /* APIClient.swift */,
-				7246B220205F76BE0094DC45 /* Endpoint.swift */,
-				7246B21C205F76BD0094DC45 /* HopprlabClient.swift */,
 				7246B21E205F76BD0094DC45 /* JSONDecodable.swift */,
 				7246B21F205F76BE0094DC45 /* Result.swift */,
+				7246B220205F76BE0094DC45 /* Endpoint.swift */,
+				7246B21D205F76BD0094DC45 /* APIClient.swift */,
+				7246B21C205F76BD0094DC45 /* HopprlabClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -133,6 +143,7 @@
 		7246B218205F76050094DC45 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -140,6 +151,7 @@
 		7246B219205F760C0094DC45 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				7277153F2060D986003B53FC /* DoctorCellViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -158,6 +170,14 @@
 				7246B205205F6EA50094DC45 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		7277153C2060D8F9003B53FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7277153D2060D916003B53FC /* DoctorCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,11 +261,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
+				7274A2B9205FA542004A85E3 /* DoctorSearchResultsController.swift in Sources */,
+				7277153E2060D916003B53FC /* DoctorCell.swift in Sources */,
+				727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */,
+				7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */,
 				7246B224205F76BE0094DC45 /* Result.swift in Sources */,
 				7246B227205F78780094DC45 /* Doctor.swift in Sources */,
 				7246B221205F76BE0094DC45 /* HopprlabClient.swift in Sources */,
+				7274A2B7205FA4FB004A85E3 /* DoctorController.swift in Sources */,
 				7246B223205F76BE0094DC45 /* JSONDecodable.swift in Sources */,
-				7246B201205F6EA50094DC45 /* ViewController.swift in Sources */,
 				7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */,
 				7246B222205F76BE0094DC45 /* APIClient.swift in Sources */,
 			);

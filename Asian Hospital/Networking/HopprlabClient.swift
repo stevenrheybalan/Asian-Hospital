@@ -18,4 +18,15 @@ class HopprlabClient: APIClient {
     convenience init() {
         self.init(configuration: .default)
     }
+    
+    func search(withTerm term: String, limit: Int = 10, sortBy sortType: HopprLab.DoctorSortType = .name, completion: @escaping (Result<[Doctor], APIError>) -> Void) {
+        let endpoint = HopprLab.searchDoctor(term: term, limit: limit, sortBy: sortType)
+        let request = endpoint.request
+
+        fetch(with: request, parse: { json -> [Doctor] in
+            guard let doctors = json["data"] as? [[String: Any]] else { return [] }
+            return doctors.flatMap { Doctor(json: $0) }
+        }, completion: completion)
+    }
+    
 }

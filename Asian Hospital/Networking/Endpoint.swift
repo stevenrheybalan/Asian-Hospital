@@ -47,7 +47,19 @@ extension Endpoint {
 }
 
 enum HopprLab {
-    case doctor
+    enum DoctorSortType: CustomStringConvertible {
+        case name
+        case department
+        
+        var description: String {
+            switch self {
+            case .name: return "name"
+            case .department: return "department"
+            }
+        }
+    }
+    
+    case searchDoctor(term: String, limit: Int?, sortBy: DoctorSortType?)
 }
 
 extension HopprLab: Endpoint {
@@ -57,13 +69,18 @@ extension HopprLab: Endpoint {
 
     var path: String {
         switch self {
-        case .doctor: return "/openAPI/Doctor/PasscodeChecker/Info"
+        case .searchDoctor: return "/openAPI/Doctor/Info"
         }
     }
 
     var queryItems: [URLQueryItem] {
         switch self {
-        case .doctor: return []
+        case .searchDoctor(let term, let limit, let sortBy):
+            return [
+                URLQueryItem(name: "term", value: term),
+                URLQueryItem(name: "limit", value: limit?.description),
+                URLQueryItem(name: "sort_by", value: sortBy?.description)
+            ]
         }
     }
 }
