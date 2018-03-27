@@ -30,7 +30,7 @@ class DoctorDetailController: UITableViewController {
             configureView(with: viewModel)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
