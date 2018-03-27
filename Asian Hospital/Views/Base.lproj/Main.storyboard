@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1wM-7z-FlR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZJ-PW-FI9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -351,7 +351,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="V9E-Vl-0ER">
-                                                    <rect key="frame" x="16" y="24" width="127" height="21"/>
+                                                    <rect key="frame" x="16" y="24.5" width="127" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="127" id="SUl-Xd-Ndj"/>
                                                     </constraints>
@@ -653,8 +653,121 @@
             </objects>
             <point key="canvasLocation" x="-42" y="116"/>
         </scene>
+        <!--Contact Controller-->
+        <scene sceneID="OrU-HH-jcT">
+            <objects>
+                <tableViewController id="vTb-IZ-fY3" customClass="ContactController" customModule="Asian_Hospital" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ezk-7Q-AcU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="keK-JH-QHY">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-wD-bzf">
+                                    <rect key="frame" x="16" y="27.5" width="162" height="55"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-yz-Hn0">
+                                            <rect key="frame" x="0.0" y="0.0" width="142" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                            <color key="textColor" red="0.25490196079999999" green="0.31372549020000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get in touch at ease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fO-2M-3aH">
+                                            <rect key="frame" x="0.0" y="33.5" width="162" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.68235294120000001" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contact" translatesAutoresizingMaskIntoConstraints="NO" id="08u-vj-l8S">
+                                    <rect key="frame" x="335" y="28.5" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="Kef-Wp-1nA"/>
+                                        <constraint firstAttribute="height" constant="32" id="aOj-cp-gUL"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="08u-vj-l8S" secondAttribute="trailing" constant="8" id="LPz-pr-zvt"/>
+                                <constraint firstItem="GQU-wD-bzf" firstAttribute="leading" secondItem="keK-JH-QHY" secondAttribute="leading" constant="16" id="Lb9-6V-aOn"/>
+                                <constraint firstItem="08u-vj-l8S" firstAttribute="centerY" secondItem="nJ3-yz-Hn0" secondAttribute="centerY" id="wfZ-li-1Bw"/>
+                                <constraint firstItem="GQU-wD-bzf" firstAttribute="centerY" secondItem="keK-JH-QHY" secondAttribute="centerY" id="xRO-tc-oPv"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="47" id="SEw-n5-lk0" customClass="ContactCell" customModule="Asian_Hospital" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="138" width="375" height="47"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SEw-n5-lk0" id="4Hx-o2-lFy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="46.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="scf-rz-nz3">
+                                            <rect key="frame" x="16" y="12" width="175" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="175" id="wEX-gn-ZmI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.25490196079999999" green="0.31372549020000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="sXP-qo-v4T">
+                                            <rect key="frame" x="199" y="13" width="160" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.68235294120000001" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="scf-rz-nz3" firstAttribute="centerY" secondItem="4Hx-o2-lFy" secondAttribute="centerY" id="6VC-6V-jrD"/>
+                                        <constraint firstItem="sXP-qo-v4T" firstAttribute="leading" secondItem="scf-rz-nz3" secondAttribute="trailing" constant="8" id="BQ0-VW-SIC"/>
+                                        <constraint firstItem="scf-rz-nz3" firstAttribute="leading" secondItem="4Hx-o2-lFy" secondAttribute="leadingMargin" id="JD2-E9-Auy"/>
+                                        <constraint firstItem="sXP-qo-v4T" firstAttribute="trailing" secondItem="4Hx-o2-lFy" secondAttribute="trailingMargin" id="NUF-bA-V0y"/>
+                                        <constraint firstItem="sXP-qo-v4T" firstAttribute="centerY" secondItem="scf-rz-nz3" secondAttribute="centerY" id="s05-8U-6ga"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="scf-rz-nz3" id="R20-1M-eEz"/>
+                                    <outlet property="numberLabel" destination="sXP-qo-v4T" id="MSL-wb-z0Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vTb-IZ-fY3" id="aq8-bp-Lc6"/>
+                            <outlet property="delegate" destination="vTb-IZ-fY3" id="1AH-vw-FYi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rdo-Ob-Deq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyI-T3-Tmo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.79999999999995" y="1238.2308845577213"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y5E-ol-C7w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NZJ-PW-FI9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z8g-hz-qGp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vTb-IZ-fY3" kind="relationship" relationship="rootViewController" id="ktI-M7-X7n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2C-fr-ehR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="1240"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Contact" width="102" height="102"/>
         <image name="Doctor" width="118" height="137"/>
         <image name="Doctor-Placeholder" width="87" height="87"/>
     </resources>

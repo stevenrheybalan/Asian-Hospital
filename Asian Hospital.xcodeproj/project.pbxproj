@@ -24,6 +24,12 @@
 		7277153E2060D916003B53FC /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153D2060D916003B53FC /* DoctorCell.swift */; };
 		727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153F2060D986003B53FC /* DoctorCellViewModel.swift */; };
 		727715422060F269003B53FC /* DoctorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727715412060F269003B53FC /* DoctorDetailController.swift */; };
+		72E4024A206A2193004B6CE6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40249206A2192004B6CE6 /* Contact.swift */; };
+		72E4024D206A2575004B6CE6 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4024C206A2575004B6CE6 /* ContactData.swift */; };
+		72E4024F206A2912004B6CE6 /* ContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4024E206A2912004B6CE6 /* ContactDataSource.swift */; };
+		72E40251206A2B23004B6CE6 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40250206A2B23004B6CE6 /* ContactController.swift */; };
+		72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40252206A2DFC004B6CE6 /* ContactCell.swift */; };
+		72E40255206A2E8D004B6CE6 /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40254206A2E8D004B6CE6 /* ContactCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,12 @@
 		7277153D2060D916003B53FC /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		7277153F2060D986003B53FC /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
 		727715412060F269003B53FC /* DoctorDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailController.swift; sourceTree = "<group>"; };
+		72E40249206A2192004B6CE6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		72E4024C206A2575004B6CE6 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
+		72E4024E206A2912004B6CE6 /* ContactDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSource.swift; sourceTree = "<group>"; };
+		72E40250206A2B23004B6CE6 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		72E40252206A2DFC004B6CE6 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		72E40254206A2E8D004B6CE6 /* ContactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 				7246B216205F75F60094DC45 /* Controllers */,
 				7246B215205F75F10094DC45 /* Views */,
 				7246B214205F75EB0094DC45 /* Models */,
+				72E4024B206A2524004B6CE6 /* Data */,
 				7246B21A205F76120094DC45 /* Supporting Files */,
 				7246B21B205F76170094DC45 /* Assets */,
 			);
@@ -107,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				7246B226205F78780094DC45 /* Doctor.swift */,
+				72E40249206A2192004B6CE6 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 				7274A2B6205FA4FB004A85E3 /* DoctorController.swift */,
 				7274A2B8205FA542004A85E3 /* DoctorSearchResultsController.swift */,
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
+				72E40250206A2B23004B6CE6 /* ContactController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */,
+				72E4024E206A2912004B6CE6 /* ContactDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				7277153F2060D986003B53FC /* DoctorCellViewModel.swift */,
+				72E40254206A2E8D004B6CE6 /* ContactCellViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -179,8 +196,17 @@
 			isa = PBXGroup;
 			children = (
 				7277153D2060D916003B53FC /* DoctorCell.swift */,
+				72E40252206A2DFC004B6CE6 /* ContactCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		72E4024B206A2524004B6CE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				72E4024C206A2575004B6CE6 /* ContactData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,19 +289,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */,
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				7274A2B9205FA542004A85E3 /* DoctorSearchResultsController.swift in Sources */,
+				72E40255206A2E8D004B6CE6 /* ContactCellViewModel.swift in Sources */,
 				7277153E2060D916003B53FC /* DoctorCell.swift in Sources */,
 				727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */,
 				7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */,
 				7246B224205F76BE0094DC45 /* Result.swift in Sources */,
+				72E4024A206A2193004B6CE6 /* Contact.swift in Sources */,
 				7246B227205F78780094DC45 /* Doctor.swift in Sources */,
 				7246B221205F76BE0094DC45 /* HopprlabClient.swift in Sources */,
+				72E4024F206A2912004B6CE6 /* ContactDataSource.swift in Sources */,
 				727715422060F269003B53FC /* DoctorDetailController.swift in Sources */,
 				7274A2B7205FA4FB004A85E3 /* DoctorController.swift in Sources */,
 				7246B223205F76BE0094DC45 /* JSONDecodable.swift in Sources */,
+				72E40251206A2B23004B6CE6 /* ContactController.swift in Sources */,
 				7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */,
 				7246B222205F76BE0094DC45 /* APIClient.swift in Sources */,
+				72E4024D206A2575004B6CE6 /* ContactData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
