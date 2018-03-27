@@ -34,6 +34,17 @@ class ContactController: UITableViewController {
     // MARK: TABLE VIEW DELEGATE
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 47
+        return 60
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contact = contacts[indexPath.row]
+        
+        if let url = contact.url {
+            UIApplication.shared.openURL(url)
+        }else {
+            // TODO: Show unable to call alert
+            print("Unable to call")
+        }
     }
 }

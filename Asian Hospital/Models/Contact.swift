@@ -24,3 +24,11 @@ class Contact: JSONDecodable {
         self.number = number
     }
 }
+
+extension Contact {
+    var url: URL? {
+        let formattedContactNumber = number.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        
+        return URL(string: "tel://\(formattedContactNumber)")
+    }
+}
