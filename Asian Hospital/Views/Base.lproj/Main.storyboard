@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZJ-PW-FI9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHa-Vt-4Tv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -765,10 +765,93 @@
             </objects>
             <point key="canvasLocation" x="-42" y="1240"/>
         </scene>
+        <!--About Us Controller-->
+        <scene sceneID="4Vz-wO-4UF">
+            <objects>
+                <tableViewController id="GHa-Vt-4Tv" customClass="AboutUsController" customModule="Asian_Hospital" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zW6-Q1-MXW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="wFh-81-zZi">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kyp-aO-gUw">
+                                    <rect key="frame" x="16" y="27.5" width="167.5" height="55"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zkn-0w-nRv">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                            <color key="textColor" red="0.25490196079999999" green="0.31372549020000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get to know us more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHW-dR-PnU">
+                                            <rect key="frame" x="0.0" y="33.5" width="167.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.68235294120000001" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hospital" translatesAutoresizingMaskIntoConstraints="NO" id="FL5-or-tWb">
+                                    <rect key="frame" x="335" y="28.5" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="6c6-51-z17"/>
+                                        <constraint firstAttribute="width" constant="32" id="Xw8-W0-792"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="FL5-or-tWb" firstAttribute="centerY" secondItem="Zkn-0w-nRv" secondAttribute="centerY" id="1jY-tQ-t71"/>
+                                <constraint firstAttribute="trailing" secondItem="FL5-or-tWb" secondAttribute="trailing" constant="8" id="AKi-La-6g3"/>
+                                <constraint firstItem="kyp-aO-gUw" firstAttribute="leading" secondItem="wFh-81-zZi" secondAttribute="leading" constant="16" id="POb-Fo-JmQ"/>
+                                <constraint firstItem="kyp-aO-gUw" firstAttribute="centerY" secondItem="wFh-81-zZi" secondAttribute="centerY" id="qYq-aK-8Fu"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DescriptionCell" rowHeight="70" id="RjH-69-XFK" customClass="AboutUsCell" customModule="Asian_Hospital" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="138" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RjH-69-XFK" id="m66-6K-tft">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxg-JL-llA">
+                                            <rect key="frame" x="16" y="19" width="335" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.25490196079999999" green="0.31372549020000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Fxg-JL-llA" firstAttribute="bottom" secondItem="m66-6K-tft" secondAttribute="bottomMargin" constant="8" id="1DT-kp-7fO"/>
+                                        <constraint firstItem="Fxg-JL-llA" firstAttribute="top" secondItem="m66-6K-tft" secondAttribute="topMargin" constant="8" id="Wke-CT-GNg"/>
+                                        <constraint firstItem="Fxg-JL-llA" firstAttribute="leading" secondItem="m66-6K-tft" secondAttribute="leadingMargin" id="Yso-Gc-gSX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Fxg-JL-llA" secondAttribute="trailing" constant="8" id="yke-p6-5eL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="Fxg-JL-llA" id="QBM-b3-gwf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GHa-Vt-4Tv" id="GWb-UK-0MY"/>
+                            <outlet property="delegate" destination="GHa-Vt-4Tv" id="0Qo-Dz-Cdf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ada-ED-hzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.399999999999999" y="2060.4197901049479"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Contact" width="102" height="102"/>
         <image name="Doctor" width="118" height="137"/>
         <image name="Doctor-Placeholder" width="87" height="87"/>
+        <image name="Hospital" width="102" height="70"/>
     </resources>
 </document>
