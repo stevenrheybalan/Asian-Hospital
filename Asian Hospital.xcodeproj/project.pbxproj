@@ -33,6 +33,9 @@
 		72E4025F206B1AB0004B6CE6 /* AboutUsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4025E206B1AB0004B6CE6 /* AboutUsDataSource.swift */; };
 		72E40261206B1BE5004B6CE6 /* AboutUsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40260206B1BE4004B6CE6 /* AboutUsData.swift */; };
 		72E40263206B1EE7004B6CE6 /* AboutUsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40262206B1EE7004B6CE6 /* AboutUsCell.swift */; };
+		72E40265206B2E33004B6CE6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40264206B2E33004B6CE6 /* Coordinate.swift */; };
+		72E40267206B2E98004B6CE6 /* CoordinateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40266206B2E98004B6CE6 /* CoordinateData.swift */; };
+		72E40269206B2FEF004B6CE6 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40268206B2FEF004B6CE6 /* LocationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		72E4025E206B1AB0004B6CE6 /* AboutUsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsDataSource.swift; sourceTree = "<group>"; };
 		72E40260206B1BE4004B6CE6 /* AboutUsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsData.swift; sourceTree = "<group>"; };
 		72E40262206B1EE7004B6CE6 /* AboutUsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCell.swift; sourceTree = "<group>"; };
+		72E40264206B2E33004B6CE6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		72E40266206B2E98004B6CE6 /* CoordinateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateData.swift; sourceTree = "<group>"; };
+		72E40268206B2FEF004B6CE6 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			children = (
 				7246B226205F78780094DC45 /* Doctor.swift */,
 				72E40249206A2192004B6CE6 /* Contact.swift */,
+				72E40264206B2E33004B6CE6 /* Coordinate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 				7274A2B8205FA542004A85E3 /* DoctorSearchResultsController.swift */,
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
 				72E4025C206B1A54004B6CE6 /* AboutUsController.swift */,
+				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			children = (
 				72E4024C206A2575004B6CE6 /* ContactData.swift */,
 				72E40260206B1BE4004B6CE6 /* AboutUsData.swift */,
+				72E40266206B2E98004B6CE6 /* CoordinateData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -299,9 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */,
+				72E40267206B2E98004B6CE6 /* CoordinateData.swift in Sources */,
 				72E40261206B1BE5004B6CE6 /* AboutUsData.swift in Sources */,
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				7274A2B9205FA542004A85E3 /* DoctorSearchResultsController.swift in Sources */,
+				72E40265206B2E33004B6CE6 /* Coordinate.swift in Sources */,
 				72E4025F206B1AB0004B6CE6 /* AboutUsDataSource.swift in Sources */,
 				72E40255206A2E8D004B6CE6 /* ContactCellViewModel.swift in Sources */,
 				7277153E2060D916003B53FC /* DoctorCell.swift in Sources */,
@@ -314,6 +325,7 @@
 				7246B221205F76BE0094DC45 /* HopprlabClient.swift in Sources */,
 				72E4024F206A2912004B6CE6 /* ContactDataSource.swift in Sources */,
 				727715422060F269003B53FC /* DoctorDetailController.swift in Sources */,
+				72E40269206B2FEF004B6CE6 /* LocationController.swift in Sources */,
 				7274A2B7205FA4FB004A85E3 /* DoctorController.swift in Sources */,
 				7246B223205F76BE0094DC45 /* JSONDecodable.swift in Sources */,
 				7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */,
