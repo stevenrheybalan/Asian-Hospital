@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72312A1D2071D8F00050375E /* PatientLoginController.swift */; };
 		7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B1FE205F6EA50094DC45 /* AppDelegate.swift */; };
 		7246B204205F6EA50094DC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7246B202205F6EA50094DC45 /* Main.storyboard */; };
 		7246B206205F6EA50094DC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7246B205205F6EA50094DC45 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72312A1D2071D8F00050375E /* PatientLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginController.swift; sourceTree = "<group>"; };
 		7246B1FB205F6EA50094DC45 /* Asian Hospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asian Hospital.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7246B1FE205F6EA50094DC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7246B203205F6EA50094DC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
 				72E4025C206B1A54004B6CE6 /* AboutUsController.swift */,
 				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
+				72312A1D2071D8F00050375E /* PatientLoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */,
+				72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */,
 				72E40267206B2E98004B6CE6 /* CoordinateData.swift in Sources */,
 				72E40261206B1BE5004B6CE6 /* AboutUsData.swift in Sources */,
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
