@@ -60,6 +60,7 @@ enum HopprLab {
     }
     
     case searchDoctor(term: String, limit: Int?, sortBy: DoctorSortType?)
+    
 }
 
 extension HopprLab: Endpoint {

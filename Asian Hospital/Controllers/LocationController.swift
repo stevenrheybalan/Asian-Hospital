@@ -31,16 +31,9 @@ class LocationController: UIViewController {
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         
-        if #available(iOS 10.0, *) {
-            let placemark = MKPlacemark(coordinate: coordinates)
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = "Asian Hospital and Medical Center"
-            mapItem.openInMaps(launchOptions: options)
-        }else {
-            let placemark = MKPlacemark()
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = "Asian Hospital and Medical Center"
-            mapItem.openInMaps(launchOptions: options)
-        }
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Asian Hospital and Medical Center"
+        mapItem.openInMaps(launchOptions: options)
     }
 }

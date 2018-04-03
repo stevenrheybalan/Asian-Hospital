@@ -9,16 +9,31 @@
 import UIKit
 
 class PatientLoginController: UIViewController {
-
+    
+    @IBOutlet weak var hospitalNumberTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: METHODS
+    
+    
+    // MARK: ACTIONS
+    
+    @IBAction func proceedButtonTapped() {
+        
+    }
+    
+    @IBAction func noAccountButtonTapped() {
+        
+    }
 }
