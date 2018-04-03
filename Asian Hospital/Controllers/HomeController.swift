@@ -34,8 +34,6 @@ class HomeController: UIViewController, UITableViewDelegate {
 
     // MARK: TABLE VIEW DELEGATE
     
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }

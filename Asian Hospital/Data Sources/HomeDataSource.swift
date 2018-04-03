@@ -22,10 +22,6 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         return 1
     }
     
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return ["Menu"]
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
