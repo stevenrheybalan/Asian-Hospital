@@ -35,13 +35,13 @@ class Doctor: JSONDecodable {
         self.department = json[Key.department] as? String
         
         if let jsonContacts = json[Key.contactNumber] as? [[String: Any]] {
-            self.contactNumbers = jsonContacts.flatMap { ContactNumber(json: $0) }
+            self.contactNumbers = jsonContacts.compactMap { ContactNumber(json: $0) }
         }else {
             self.contactNumbers = nil
         }
 
         if let jsonSpecialization = json[Key.specialization] as? [[String: Any]] {
-            self.specializations = jsonSpecialization.flatMap { Specialization(json: $0) }
+            self.specializations = jsonSpecialization.compactMap { Specialization(json: $0) }
         }else {
             self.specializations = nil
         }

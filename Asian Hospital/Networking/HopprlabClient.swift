@@ -25,7 +25,7 @@ class HopprlabClient: APIClient {
 
         fetch(with: request, parse: { json -> [Doctor] in
             guard let doctors = json["data"] as? [[String: Any]] else { return [] }
-            return doctors.flatMap { Doctor(json: $0) }
+            return doctors.compactMap { Doctor(json: $0) }
         }, completion: completion)
     }
 }
