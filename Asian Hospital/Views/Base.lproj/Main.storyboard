@@ -474,7 +474,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDs-91-blC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1027" y="581"/>
+            <point key="canvasLocation" x="-1005" y="474"/>
         </scene>
         <!--Patient Login-->
         <scene sceneID="3Gw-HC-UVg">
@@ -577,6 +577,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNb-gn-bQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2084" y="-293"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cs0-bU-K34">
+            <objects>
+                <viewController id="NAe-nZ-NKI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2i2-mz-uay">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="61o-W1-HBE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hZ-rT-5av" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-213" y="-293"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="OrU-HH-jcT">
@@ -764,7 +779,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="obw-tx-agX">
                         <rect key="frame" x="0.0" y="20" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.25490196079999999" green="0.31372549020000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -783,26 +799,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="ug4-qH-wQL">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ug4-qH-wQL">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Asian" translatesAutoresizingMaskIntoConstraints="NO" id="iPV-mr-WNO">
-                                    <rect key="frame" x="52" y="71.666666666666686" width="310" height="184"/>
-                                </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner" translatesAutoresizingMaskIntoConstraints="NO" id="esZ-zM-s0h">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="327"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Asian" translatesAutoresizingMaskIntoConstraints="NO" id="iPV-mr-WNO">
+                                    <rect key="frame" x="40" y="37" width="334" height="184"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="esZ-zM-s0h" secondAttribute="bottom" id="86H-fs-9Ib"/>
-                                <constraint firstItem="esZ-zM-s0h" firstAttribute="leading" secondItem="ug4-qH-wQL" secondAttribute="leading" id="HqH-KQ-Dws"/>
-                                <constraint firstAttribute="trailing" secondItem="esZ-zM-s0h" secondAttribute="trailing" id="P9t-Tx-wKC"/>
-                                <constraint firstItem="esZ-zM-s0h" firstAttribute="top" secondItem="ug4-qH-wQL" secondAttribute="top" id="PVn-YB-Y2C"/>
-                                <constraint firstAttribute="trailing" secondItem="iPV-mr-WNO" secondAttribute="trailing" constant="52" id="Ub2-TJ-qfN"/>
-                                <constraint firstItem="iPV-mr-WNO" firstAttribute="leading" secondItem="ug4-qH-wQL" secondAttribute="leading" constant="52" id="aMQ-sP-PQ1"/>
-                                <constraint firstItem="iPV-mr-WNO" firstAttribute="centerY" secondItem="ug4-qH-wQL" secondAttribute="centerY" id="oVm-et-6WX"/>
+                                <constraint firstItem="esZ-zM-s0h" firstAttribute="top" secondItem="ug4-qH-wQL" secondAttribute="top" id="GU8-kc-KK3"/>
+                                <constraint firstAttribute="trailing" secondItem="esZ-zM-s0h" secondAttribute="trailing" id="Hrl-x4-Aeq"/>
+                                <constraint firstItem="esZ-zM-s0h" firstAttribute="leading" secondItem="ug4-qH-wQL" secondAttribute="leading" id="b1J-Zf-sNv"/>
+                                <constraint firstItem="iPV-mr-WNO" firstAttribute="centerY" secondItem="ug4-qH-wQL" secondAttribute="centerY" id="ce1-AQ-p0B"/>
+                                <constraint firstAttribute="bottom" secondItem="esZ-zM-s0h" secondAttribute="bottom" id="gWg-6i-KfD"/>
+                                <constraint firstAttribute="trailing" secondItem="iPV-mr-WNO" secondAttribute="trailing" constant="40" id="ggv-Ly-jyi"/>
+                                <constraint firstItem="iPV-mr-WNO" firstAttribute="leading" secondItem="ug4-qH-wQL" secondAttribute="leading" constant="40" id="h5z-Vv-C9I"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -863,7 +879,7 @@
                                         <constraint firstAttribute="bottom" secondItem="qs1-3R-7pz" secondAttribute="bottom" constant="8" id="pep-Zn-xyP"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="menuImageView" destination="1dy-0l-tcb" id="u9R-WN-5gn"/>
                                     <outlet property="subtitleLabel" destination="FS8-Ls-zNa" id="NFm-qT-Euo"/>
@@ -887,7 +903,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI0-OS-s7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3057" y="474"/>
+            <point key="canvasLocation" x="-3057.971014492754" y="473.64130434782612"/>
         </scene>
         <!--Our Doctors-->
         <scene sceneID="ofX-JF-uRe">
