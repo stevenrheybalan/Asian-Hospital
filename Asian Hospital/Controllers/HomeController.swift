@@ -8,23 +8,24 @@
 
 import UIKit
 
-class HomeController: UIViewController, UITableViewDelegate {
-    
-    @IBOutlet weak var tableView: UITableView!
+class HomeController: UITableViewController {
     
     lazy var dataSource: HomeDataSource = {
         return HomeDataSource(items: Constant.homeMenuItems)
     }()
 
+    let menuIdentifier = [
+        "showPatientLogin",
+        "showDoctors",
+        "showLocation",
+        "showContacts",
+        "showAboutUs"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
-        tableView.delegate = self
-
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +35,8 @@ class HomeController: UIViewController, UITableViewDelegate {
 
     // MARK: TABLE VIEW DELEGATE
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let segueIdentifier = menuIdentifier[indexPath.row]
+        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }

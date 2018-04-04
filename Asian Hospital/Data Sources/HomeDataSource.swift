@@ -10,7 +10,7 @@ import UIKit
 
 class HomeDataSource: NSObject, UITableViewDataSource {
     
-    var items: [Item]!
+    private var items: [Item]
     
     init(items: [Item]) {
         self.items = items
