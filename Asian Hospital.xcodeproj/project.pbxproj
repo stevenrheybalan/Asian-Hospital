@@ -24,7 +24,7 @@
 		7246B224205F76BE0094DC45 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B21F205F76BE0094DC45 /* Result.swift */; };
 		7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B220205F76BE0094DC45 /* Endpoint.swift */; };
 		7246B227205F78780094DC45 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B226205F78780094DC45 /* Doctor.swift */; };
-		725DC5792076FA88007F4FC9 /* PatientAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725DC5782076FA88007F4FC9 /* PatientAccount.swift */; };
+		725DC57B20774F84007F4FC9 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725DC57A20774F84007F4FC9 /* UserAccount.swift */; };
 		7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */; };
 		7277153E2060D916003B53FC /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153D2060D916003B53FC /* DoctorCell.swift */; };
 		727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153F2060D986003B53FC /* DoctorCellViewModel.swift */; };
@@ -70,7 +70,7 @@
 		7246B21F205F76BE0094DC45 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7246B220205F76BE0094DC45 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7246B226205F78780094DC45 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
-		725DC5782076FA88007F4FC9 /* PatientAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAccount.swift; sourceTree = "<group>"; };
+		725DC57A20774F84007F4FC9 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchResultsDataSource.swift; sourceTree = "<group>"; };
 		7277153D2060D916003B53FC /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		7277153F2060D986003B53FC /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				72E40249206A2192004B6CE6 /* Contact.swift */,
 				72E40264206B2E33004B6CE6 /* Coordinate.swift */,
 				72062C0B20736C5A001640CB /* Item.swift */,
-				725DC5782076FA88007F4FC9 /* PatientAccount.swift */,
+				725DC57A20774F84007F4FC9 /* UserAccount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,11 +408,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				72DF56CB20736E790096F93F /* HomeMenuCellViewModel.swift in Sources */,
+				725DC57B20774F84007F4FC9 /* UserAccount.swift in Sources */,
 				72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */,
 				72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */,
 				72E40267206B2E98004B6CE6 /* CoordinateData.swift in Sources */,
 				72062C0A20736B85001640CB /* HomeDataSource.swift in Sources */,
-				725DC5792076FA88007F4FC9 /* PatientAccount.swift in Sources */,
 				72E40261206B1BE5004B6CE6 /* AboutUsData.swift in Sources */,
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				72A457E6207460ED001EEC6B /* DoctorsDataSource.swift in Sources */,

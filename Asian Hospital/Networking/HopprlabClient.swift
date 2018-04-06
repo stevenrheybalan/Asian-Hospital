@@ -19,8 +19,26 @@ class HopprlabClient: APIClient {
         self.init(configuration: .default)
     }
     
-    func requestToken(withUsername username: String, password: String, completion: @escaping (Result<PatientAccount?, APIError>) -> Void) {
+    func requestToken(withUsername username: String, password: String, completion: @escaping (Result<UserAccount?, APIError>) -> Void) {
+        let grantType = "password"
+        let clientId = "COA01"
+        let clientSecret = "open@pi01"
+
+        let httpBody: Dictionary<String, Any> = [
+            "grant_type": grantType,
+            "username": username,
+            "password": password,
+            "client_id": clientId,
+            "client_secret": clientSecret
+        ]
+
+        let endpoint = HopprLab.requestToken
+        let request = endpoint.requestWithHttpBody(httpBody)
         
+
+//        fetch(with: request, parse: { json -> UserAccount? in
+//            return UserAccount(json: json)
+//        }, completion: completion)
     }
     
     func search(withTerm term: String, limit: Int = 10, sortBy sortType: HopprLab.DoctorSortType = .name, completion: @escaping (Result<[Doctor], APIError>) -> Void) {

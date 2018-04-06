@@ -37,6 +37,20 @@ extension Endpoint {
         return URLRequest(url: url)
     }
     
+    typealias HttpBody = Dictionary<String, Any>
+    
+    func requestWithHttpBody(_ httpBody: HttpBody) -> URLRequest {
+        var requestWithBody = request
+        
+        let data = try! PropertyListSerialization.data(fromPropertyList: httpBody, format: .binary, options: 0)
+        
+        requestWithBody.httpMethod = "POST"
+        requestWithBody.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        requestWithBody.httpBody = data
+        
+        return requestWithBody
+    }
+    
     func requestWithAuthorizationHeader(oauthToken: String) -> URLRequest {
         var oauthRequest = request
         
@@ -59,7 +73,7 @@ enum HopprLab {
         }
     }
     
-    case requestToken(username: String, password: String)
+    case requestToken
     case searchDoctor(term: String, limit: Int?, sortBy: DoctorSortType?)
 }
 
