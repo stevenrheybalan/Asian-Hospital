@@ -19,6 +19,10 @@ class HopprlabClient: APIClient {
         self.init(configuration: .default)
     }
     
+    func requestToken(withUsername username: String, password: String, completion: @escaping (Result<PatientAccount?, APIError>) -> Void) {
+        
+    }
+    
     func search(withTerm term: String, limit: Int = 10, sortBy sortType: HopprLab.DoctorSortType = .name, completion: @escaping (Result<[Doctor], APIError>) -> Void) {
         let endpoint = HopprLab.searchDoctor(term: term, limit: limit, sortBy: sortType)
         let request = endpoint.request

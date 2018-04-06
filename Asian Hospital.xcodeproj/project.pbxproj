@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C8193CEC061E5D6EA1ABCE5 /* Pods_Asian_Hospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */; };
 		72062C0620735588001640CB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0520735588001640CB /* HomeController.swift */; };
 		72062C0820735AF7001640CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0720735AF7001640CB /* Constants.swift */; };
 		72062C0A20736B85001640CB /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0920736B85001640CB /* HomeDataSource.swift */; };
@@ -23,6 +24,7 @@
 		7246B224205F76BE0094DC45 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B21F205F76BE0094DC45 /* Result.swift */; };
 		7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B220205F76BE0094DC45 /* Endpoint.swift */; };
 		7246B227205F78780094DC45 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B226205F78780094DC45 /* Doctor.swift */; };
+		725DC5792076FA88007F4FC9 /* PatientAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725DC5782076FA88007F4FC9 /* PatientAccount.swift */; };
 		7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */; };
 		7277153E2060D916003B53FC /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153D2060D916003B53FC /* DoctorCell.swift */; };
 		727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153F2060D986003B53FC /* DoctorCellViewModel.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asian_Hospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C2591453A19E04D1B5C95C /* Pods-Asian Hospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asian Hospital.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital.release.xcconfig"; sourceTree = "<group>"; };
 		72062C0520735588001640CB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		72062C0720735AF7001640CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72062C0920736B85001640CB /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		7246B21F205F76BE0094DC45 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7246B220205F76BE0094DC45 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7246B226205F78780094DC45 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		725DC5782076FA88007F4FC9 /* PatientAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAccount.swift; sourceTree = "<group>"; };
 		7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchResultsDataSource.swift; sourceTree = "<group>"; };
 		7277153D2060D916003B53FC /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		7277153F2060D986003B53FC /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 		72E40264206B2E33004B6CE6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		72E40266206B2E98004B6CE6 /* CoordinateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateData.swift; sourceTree = "<group>"; };
 		72E40268206B2FEF004B6CE6 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		D63417934C20AD010F3A2B3E /* Pods-Asian Hospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asian Hospital.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,18 +101,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7246B213205F6EDA0094DC45 /* HealthKit.framework in Frameworks */,
+				3C8193CEC061E5D6EA1ABCE5 /* Pods_Asian_Hospital.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BB5D8C5C5B97DFE3A219AF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D63417934C20AD010F3A2B3E /* Pods-Asian Hospital.debug.xcconfig */,
+				71C2591453A19E04D1B5C95C /* Pods-Asian Hospital.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7246B1F2205F6EA50094DC45 = {
 			isa = PBXGroup;
 			children = (
 				7246B1FD205F6EA50094DC45 /* Asian Hospital */,
 				7246B1FC205F6EA50094DC45 /* Products */,
 				7246B211205F6EDA0094DC45 /* Frameworks */,
+				1BB5D8C5C5B97DFE3A219AF4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				7246B212205F6EDA0094DC45 /* HealthKit.framework */,
+				0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +169,7 @@
 				72E40249206A2192004B6CE6 /* Contact.swift */,
 				72E40264206B2E33004B6CE6 /* Coordinate.swift */,
 				72062C0B20736C5A001640CB /* Item.swift */,
+				725DC5782076FA88007F4FC9 /* PatientAccount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7246B20D205F6EA50094DC45 /* Build configuration list for PBXNativeTarget "Asian Hospital" */;
 			buildPhases = (
+				3CCF733933ECB3FD08E18ED2 /* [CP] Check Pods Manifest.lock */,
 				7246B1F7205F6EA50094DC45 /* Sources */,
 				7246B1F8205F6EA50094DC45 /* Frameworks */,
 				7246B1F9205F6EA50094DC45 /* Resources */,
+				341C00DC0FAF6CEFA26EB1B8 /* [CP] Embed Pods Frameworks */,
+				571A04D03CC077B3F925D36A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,6 +348,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		341C00DC0FAF6CEFA26EB1B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CCF733933ECB3FD08E18ED2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Asian Hospital-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		571A04D03CC077B3F925D36A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7246B1F7205F6EA50094DC45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -336,6 +412,7 @@
 				72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */,
 				72E40267206B2E98004B6CE6 /* CoordinateData.swift in Sources */,
 				72062C0A20736B85001640CB /* HomeDataSource.swift in Sources */,
+				725DC5792076FA88007F4FC9 /* PatientAccount.swift in Sources */,
 				72E40261206B1BE5004B6CE6 /* AboutUsData.swift in Sources */,
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				72A457E6207460ED001EEC6B /* DoctorsDataSource.swift in Sources */,
@@ -502,6 +579,7 @@
 		};
 		7246B20E205F6EA50094DC45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63417934C20AD010F3A2B3E /* Pods-Asian Hospital.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Asian Hospital/Asian Hospital.entitlements";
@@ -519,6 +597,7 @@
 		};
 		7246B20F205F6EA50094DC45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71C2591453A19E04D1B5C95C /* Pods-Asian Hospital.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Asian Hospital/Asian Hospital.entitlements";
