@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias Parameters = Dictionary<String, Any>
+
 /// A type that provides URLRequests for defined API endpoints
 protocol Endpoint {
     /// Returns the base URL for the API as a string
@@ -37,20 +39,25 @@ extension Endpoint {
         return URLRequest(url: url)
     }
     
-    typealias HttpBody = Dictionary<String, Any>
-    
-    func requestWithHttpBody(_ httpBody: HttpBody) -> URLRequest {
-        var requestWithBody = request
+    func request(with parameters: Parameters) -> URLRequest {
+        var requestWithParams = request
         
-        let data = try! PropertyListSerialization.data(fromPropertyList: httpBody, format: .binary, options: 0)
+        var paramString = ""
         
-        requestWithBody.httpMethod = "POST"
-        requestWithBody.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        requestWithBody.httpBody = data
+        for (key, value) in parameters {
+            if let escapedKey = key.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                let escapedValue = (value as AnyObject).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                paramString += "\(escapedKey)=\(escapedValue)&"
+            }
+        }
         
-        return requestWithBody
+        requestWithParams.httpMethod = HTTPMethod.post.rawValue
+        requestWithParams.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        requestWithParams.httpBody = paramString.data(using: .utf8)
+        
+        return requestWithParams
     }
-    
+
     func requestWithAuthorizationHeader(oauthToken: String) -> URLRequest {
         var oauthRequest = request
         
@@ -85,7 +92,7 @@ extension HopprLab: Endpoint {
     var path: String {
         switch self {
             case .searchDoctor: return "/openAPI/Doctor/Info"
-            case .requestToken: return "/token"
+            case .requestToken: return "/openAPI/token"
         }
     }
 

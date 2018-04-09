@@ -13,6 +13,8 @@ class PatientLoginController: UIViewController {
     @IBOutlet weak var hospitalNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    private let client = HopprlabClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,22 @@ class PatientLoginController: UIViewController {
         textField.becomeFirstResponder()
     }
     
+    func requestOAuthToken(username: String, password: String) {
+        client.requestToken(withUsername: username, password: password) { (result) in
+            switch result {
+                case .success(let userAccount):
+                    do {
+                        try userAccount.save()
+                        print("Success! Token: \(userAccount.accessToken)")
+                    }catch (let error) {
+                        print("Failed saving in keychain. Error: \(error.localizedDescription)")
+                    }
+                case .failure(let error):
+                    print("Failed: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     // MARK: ACTIONS
     
     @IBAction func proceedButtonTapped() {
@@ -50,6 +68,8 @@ class PatientLoginController: UIViewController {
             shakeTextField(passwordTextField)
             return
         }
+        
+        requestOAuthToken(username: username, password: password)
     }
     
     @IBAction func noAccountButtonTapped() {
