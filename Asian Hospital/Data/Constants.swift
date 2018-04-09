@@ -16,7 +16,7 @@ struct Constant {
         Item(title: "Contact Us", subtitle: "Get in touch at ease as you can now quickly contact us directly", image: #imageLiteral(resourceName: "Contact")),
         Item(title: "About Us", subtitle: "", image: #imageLiteral(resourceName: "Hospital"))
     ]
-    
+
     static let hotlines = [
         "contacts": [
             ["contact_name": "Emergency Hotline", "contact_number": "(02) 876-5739"],

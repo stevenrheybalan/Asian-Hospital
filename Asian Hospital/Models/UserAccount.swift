@@ -13,7 +13,7 @@ class UserAccount: NSObject, JSONDecodable {
     let username: String
     let accessToken: String
     let expirationPeriod: TimeInterval
-//    let grantDate: Date
+    let grantDate: Date
     
     static let service = "HopprLab"
     
@@ -32,7 +32,7 @@ class UserAccount: NSObject, JSONDecodable {
         self.username = username
         self.accessToken = token
         self.expirationPeriod = expiration
-//        self.grantDate = grantDate
+        self.grantDate = Date()
     }
     
     func save() throws {
@@ -40,7 +40,7 @@ class UserAccount: NSObject, JSONDecodable {
             Key.username: username,
             Key.accessToken: accessToken,
             Key.expirationPeriod: expirationPeriod,
-//            Key.grantDate: grantDate
+            Key.grantDate: grantDate
         ]
         
         let data = try PropertyListSerialization.data(fromPropertyList: dataDictionary, format: .binary, options: 0)

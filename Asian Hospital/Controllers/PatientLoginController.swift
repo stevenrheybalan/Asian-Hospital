@@ -41,12 +41,12 @@ class PatientLoginController: UIViewController {
     }
     
     func requestOAuthToken(username: String, password: String) {
-        client.requestToken(withUsername: username, password: password) { (result) in
+        client.requestToken(withUsername: username, password: password) { [unowned self] (result) in
             switch result {
                 case .success(let userAccount):
                     do {
                         try userAccount.save()
-                        print("Success! Token: \(userAccount.accessToken)")
+                        self.performSegue(withIdentifier: "showPatientProfile", sender: self)
                     }catch (let error) {
                         print("Failed saving in keychain. Error: \(error.localizedDescription)")
                     }
