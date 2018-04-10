@@ -34,7 +34,7 @@ class ContactController: UITableViewController {
     // MARK: TABLE VIEW DELEGATE
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 47
+        return 55
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -204,12 +204,12 @@
 			children = (
 				72062C0520735588001640CB /* HomeController.swift */,
 				72A457E320745E92001EEC6B /* DoctorsController.swift */,
-				727715412060F269003B53FC /* DoctorDetailController.swift */,
-				72E4025C206B1A54004B6CE6 /* AboutUsController.swift */,
-				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
 				72312A1D2071D8F00050375E /* PatientLoginController.swift */,
 				72204B68207B2CB8007C4E84 /* PatientProfileController.swift */,
+				727715412060F269003B53FC /* DoctorDetailController.swift */,
+				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
 				72A457E72074A887001EEC6B /* ContactController.swift */,
+				72E4025C206B1A54004B6CE6 /* AboutUsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

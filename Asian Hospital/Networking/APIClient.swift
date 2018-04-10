@@ -44,8 +44,6 @@ extension APIClient {
                 return
             }
             
-            print("Status code: \(httpResponse.statusCode)")
-            
             if httpResponse.statusCode == 200 {
                 if let data = data {
                     do {
