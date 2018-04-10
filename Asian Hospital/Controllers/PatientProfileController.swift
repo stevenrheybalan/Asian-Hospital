@@ -11,7 +11,8 @@ import UIKit
 class PatientProfileController: UITableViewController {
     
     let tableViewItems: [TableViewItem] = [
-        TableViewItem(title: "Health Information", rowHeight: 160, items: [
+        TableViewItem(title: "Health Information", rowHeight: 165, items: [
+            Item(title: "Demographics", subtitle: "", image: #imageLiteral(resourceName: "Profile")),
             Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
             Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
             Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
