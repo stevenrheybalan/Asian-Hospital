@@ -14,6 +14,7 @@ class AboutUsDataSource: NSObject, UITableViewDataSource {
     
     init(description: String) {
         self.descriptionString = description
+        super.init()
     }
     
     // MARK: TABLE VIEW DATA SOURCE

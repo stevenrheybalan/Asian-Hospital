@@ -16,8 +16,15 @@ class PatientProfileController: UITableViewController {
         Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))
     ]
     
+    lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
+        return PatientProfileDataSourceDelegate(collectionViewItems: menuItems)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = dataSourceDelegate
+        tableView.delegate = dataSourceDelegate
         
         tableView.rowHeight = 160
     }
@@ -25,55 +32,5 @@ class PatientProfileController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension PatientProfileController {
-    // MARK: DATA SOURCE
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-            case 0: return "Health Information"
-        default: return ""
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-            case 0: return 1
-        default: return 0
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        
-        switch indexPath.section {
-            case 0:
-                cell = tableView.dequeueReusableCell(withIdentifier: "HorizontalMenuCell", for: indexPath) as! HorizontalMenuCell
-        default: break
-        }
-        
-        return cell
-    }
-    
-    // MARK: DELEGATE
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-            case 0:
-                let cell = cell as! HorizontalMenuCell
-            
-                cell.items = menuItems
-
-//                let dataSourceDelegate = CollectionViewDataSourceDelegate(withItems: menuItems)
-//
-//                cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: dataSourceDelegate)
-        default: break
-        }
     }
 }

@@ -14,6 +14,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
     
     init(items: [Item]) {
         self.items = items
+        super.init()
     }
     
     // MARK: TABLE VIEW DATA SOURCE
