@@ -1003,7 +1003,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HorizontalMenuCell" rowHeight="160" id="Yqd-m4-XgB" customClass="HorizontalMenuCell" customModule="Asian_Hospital" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HorizontalMenuCell" rowHeight="160" id="Yqd-m4-XgB" customClass="HorizontalMenuCell" customModule="Asian_Hospital" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yqd-m4-XgB" id="POs-7B-LhC">
@@ -1017,11 +1017,11 @@
                                                 <size key="itemSize" width="120" height="120"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
+                                                <inset key="sectionInset" minX="20" minY="15" maxX="10" maxY="15"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCollectionViewCell" id="g04-NC-DTW" customClass="MenuCollectionViewCell" customModule="Asian_Hospital" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="19.666666666666668" width="120" height="120"/>
+                                                    <rect key="frame" x="20" y="19.666666666666668" width="120" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -1050,12 +1050,6 @@
                                                         <constraint firstAttribute="bottom" secondItem="Dxo-W6-tZj" secondAttribute="bottom" constant="10" id="hoE-p5-bj4"/>
                                                         <constraint firstItem="Z0w-Mb-Jq8" firstAttribute="leading" secondItem="g04-NC-DTW" secondAttribute="leading" constant="12" id="xfN-QD-Fay"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="imageView" destination="Dxo-W6-tZj" id="57h-Q2-ljn"/>
                                                         <outlet property="titleLabel" destination="Z0w-Mb-Jq8" id="F01-Gv-xMe"/>
@@ -1076,6 +1070,34 @@
                                 <connections>
                                     <outlet property="collectionView" destination="FsX-mx-9WI" id="jhZ-0q-oy1"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LargeMenuCell" rowHeight="175" id="vLI-1q-tkp" customClass="HorizontalMenuCell" customModule="Asian_Hospital" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="288" width="414" height="175"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vLI-1q-tkp" id="4ci-65-1a7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="174.66666666666666"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-Uf-C1b">
+                                            <rect key="frame" x="20" y="11" width="374" height="153"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Raz-Uf-C1b" firstAttribute="bottom" secondItem="4ci-65-1a7" secondAttribute="bottomMargin" id="2oU-5G-uQ6"/>
+                                        <constraint firstItem="Raz-Uf-C1b" firstAttribute="leading" secondItem="4ci-65-1a7" secondAttribute="leadingMargin" id="VXl-rw-Ads"/>
+                                        <constraint firstItem="Raz-Uf-C1b" firstAttribute="top" secondItem="4ci-65-1a7" secondAttribute="topMargin" id="qHw-a0-Oyf"/>
+                                        <constraint firstItem="Raz-Uf-C1b" firstAttribute="trailing" secondItem="4ci-65-1a7" secondAttribute="trailingMargin" id="u8D-12-5ha"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
