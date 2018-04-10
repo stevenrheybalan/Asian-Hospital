@@ -979,7 +979,7 @@
         <scene sceneID="km3-ZH-1nC">
             <objects>
                 <tableViewController id="NoV-Sy-L8k" customClass="PatientProfileController" customModule="Asian_Hospital" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xoG-Qd-ELt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xoG-Qd-ELt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1007,7 +1007,7 @@
                                 <rect key="frame" x="0.0" y="128" width="414" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yqd-m4-XgB" id="POs-7B-LhC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FsX-mx-9WI">
@@ -1034,10 +1034,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Allergies" translatesAutoresizingMaskIntoConstraints="NO" id="Dxo-W6-tZj">
-                                                                <rect key="frame" x="58" y="60" width="50" height="50"/>
+                                                                <rect key="frame" x="68" y="70" width="40" height="40"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="71t-yW-R0J"/>
-                                                                    <constraint firstAttribute="height" constant="50" id="Qmu-AT-zm9"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="71t-yW-R0J"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="Qmu-AT-zm9"/>
                                                                 </constraints>
                                                             </imageView>
                                                         </subviews>
@@ -1075,31 +1075,31 @@
                                 <rect key="frame" x="0.0" y="288" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vLI-1q-tkp" id="4ci-65-1a7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-Uf-C1b">
                                             <rect key="frame" x="20" y="16" width="374" height="167.66666666666666"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-cX-g7A">
-                                                    <rect key="frame" x="308" y="16" width="50" height="50"/>
+                                                    <rect key="frame" x="318" y="18" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="k1B-Mo-yjv"/>
-                                                        <constraint firstAttribute="height" constant="50" id="tc7-IS-jPg"/>
+                                                        <constraint firstAttribute="width" constant="40" id="k1B-Mo-yjv"/>
+                                                        <constraint firstAttribute="height" constant="40" id="tc7-IS-jPg"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0N2-kX-FsX">
-                                                    <rect key="frame" x="16" y="15.999999999999996" width="163.66666666666666" height="48.666666666666657"/>
+                                                    <rect key="frame" x="16" y="16" width="149.33333333333334" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-xz-g2r">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="26.333333333333332"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="149.33333333333334" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                             <color key="textColor" red="0.25490196079999999" green="0.31372549020000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple HealthKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqX-Po-t5f">
-                                                            <rect key="frame" x="0.0" y="28.333333333333336" width="122.66666666666667" height="20.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="26" width="109.66666666666667" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

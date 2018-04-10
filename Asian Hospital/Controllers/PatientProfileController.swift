@@ -10,20 +10,20 @@ import UIKit
 
 class PatientProfileController: UITableViewController {
     
-    let collectionViewItems: [Item] = [
-        Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
-        Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
-        Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))
-    ]
-    
     let tableViewItems: [TableViewItem] = [
-        TableViewItem(title: "Health Information", rows: 1, rowHeight: 160),
-        TableViewItem(title: "Summary", rows: 1, rowHeight: 200),
-        TableViewItem(title: "Others", rows: 1, rowHeight: 200)
+        TableViewItem(title: "Health Information", rowHeight: 160, items: [
+            Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
+            Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
+            Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
+        TableViewItem(title: "Summary", rowHeight: 200, items: [
+            Item(title: "Health Record Summary", subtitle: "Apple HealthKit", image: #imageLiteral(resourceName: "Heart"), buttonTitle: "Download")]),
+        TableViewItem(title: "Others", rowHeight: 200, items: [
+            Item(title: "Patient Barcode", subtitle: "Apple Wallet", image: #imageLiteral(resourceName: "Barcode"), buttonTitle: "Generate"),
+            Item(title: "Billing Details", subtitle: "Inpatient Only", image: #imageLiteral(resourceName: "Bill"), buttonTitle: "Generate")])
     ]
     
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
-        return PatientProfileDataSourceDelegate(tableViewItems: tableViewItems, collectionViewItems: collectionViewItems)
+        return PatientProfileDataSourceDelegate(tableViewItems: tableViewItems)
     }()
     
     override func viewDidLoad() {

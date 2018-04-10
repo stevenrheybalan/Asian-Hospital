@@ -12,4 +12,14 @@ struct Item {
     let title: String
     let subtitle: String
     let image: UIImage?
+    let buttonTitle: String?
+}
+
+extension Item {
+    init(title: String, subtitle: String, image: UIImage?) {
+        self.title = title
+        self.subtitle = subtitle
+        self.image = image
+        self.buttonTitle = nil
+    }
 }

@@ -10,13 +10,11 @@ import UIKit
 
 class PatientProfileDataSourceDelegate: NSObject{
     
-    var collectionViewItems = [Item]()
     var tableViewItems = [TableViewItem]()
     var storedOffsets = [Int: CGFloat]()
     
-    init(tableViewItems: [TableViewItem], collectionViewItems: [Item]) {
+    init(tableViewItems: [TableViewItem]) {
         self.tableViewItems = tableViewItems
-        self.collectionViewItems = collectionViewItems
         super.init()
     }
 }
@@ -31,7 +29,9 @@ extension PatientProfileDataSourceDelegate: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewItems[section].rows
+        if section == 0 { return 1 }
+        
+        return tableViewItems[section].items.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,26 +60,16 @@ extension PatientProfileDataSourceDelegate: UITableViewDelegate {
             guard let horizontalCell = cell as? HorizontalMenuCell else { return }
             let row = indexPath.row
             
-            horizontalCell.items = collectionViewItems
+            horizontalCell.items = tableViewItems[indexPath.section].items
             horizontalCell.collectionViewOffset = storedOffsets[row] ?? 0
-        case 1:
+        case 1, 2:
             guard let largeMenuCell = cell as? LargeMenuCell else { return }
+            let item = tableViewItems[indexPath.section].items[indexPath.row]
             
-            largeMenuCell.titleLabel.text = "Health Summary"
-            largeMenuCell.subTitleLabel.text = "Apple HealthKit"
-            largeMenuCell.iconImageView.image = #imageLiteral(resourceName: "Heart")
-            largeMenuCell.button.setTitle("Download", for: .normal)
-        case 2:
-            guard let largeMenuCell = cell as? LargeMenuCell else { return }
-            
-            switch indexPath.row {
-            case 0:
-                largeMenuCell.titleLabel.text = "Patient Barcode"
-                largeMenuCell.subTitleLabel.text = "Apple Wallet"
-                largeMenuCell.iconImageView.image = #imageLiteral(resourceName: "barcode")
-                largeMenuCell.button.setTitle("Generate", for: .normal)
-            default: break
-            }
+            largeMenuCell.titleLabel.text = item.title
+            largeMenuCell.subTitleLabel.text = item.subtitle
+            largeMenuCell.iconImageView.image = item.image
+            largeMenuCell.button.setTitle(item.buttonTitle ?? "", for: .normal)
         default: break
         }
     }

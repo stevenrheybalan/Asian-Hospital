@@ -10,6 +10,6 @@ import UIKit
 
 struct TableViewItem {
     let title: String
-    let rows: Int
     let rowHeight: CGFloat
+    let items: [Item]
 }
