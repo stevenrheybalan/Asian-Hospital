@@ -10,14 +10,20 @@ import UIKit
 
 class PatientProfileController: UITableViewController {
     
-    let menuItems: [Item] = [
+    let collectionViewItems: [Item] = [
         Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
         Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
         Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))
     ]
     
+    let tableViewItems: [TableViewItem] = [
+        TableViewItem(title: "Health Information", rows: 1, rowHeight: 160),
+        TableViewItem(title: "Summary", rows: 1, rowHeight: 200),
+        TableViewItem(title: "Others", rows: 1, rowHeight: 200)
+    ]
+    
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
-        return PatientProfileDataSourceDelegate(collectionViewItems: menuItems)
+        return PatientProfileDataSourceDelegate(tableViewItems: tableViewItems, collectionViewItems: collectionViewItems)
     }()
     
     override func viewDidLoad() {
@@ -25,8 +31,6 @@ class PatientProfileController: UITableViewController {
         
         tableView.dataSource = dataSourceDelegate
         tableView.delegate = dataSourceDelegate
-        
-        tableView.rowHeight = 160
     }
 
     override func didReceiveMemoryWarning() {

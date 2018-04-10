@@ -9,6 +9,8 @@
 import UIKit
 
 class HorizontalMenuCell: UITableViewCell {
+    
+    static let reuseIdentifier = "HorizontalMenuCell"
 
     @IBOutlet private weak var collectionView: UICollectionView!
     
