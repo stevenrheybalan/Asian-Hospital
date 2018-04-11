@@ -11,5 +11,6 @@ import UIKit
 struct TableViewItem {
     let title: String
     let rowHeight: CGFloat
+    let hasCollectionView: Bool
     let items: [Item]
 }

@@ -46,6 +46,9 @@ class PatientLoginController: UIViewController {
                 case .success(let userAccount):
                     do {
                         try userAccount.save()
+                        
+                        self.passwordTextField.text = ""
+                        
                         self.performSegue(withIdentifier: "showPatientProfile", sender: self)
                     }catch (let error) {
                         print("Failed saving in keychain. Error: \(error.localizedDescription)")
@@ -69,7 +72,11 @@ class PatientLoginController: UIViewController {
             return
         }
         
-        requestOAuthToken(username: username, password: password)
+//        requestOAuthToken(username: username, password: password)
+        
+        // FOR TESTING ONLY
+        passwordTextField.text = ""
+        performSegue(withIdentifier: "showPatientProfile", sender: self)
     }
     
     @IBAction func noAccountButtonTapped() {

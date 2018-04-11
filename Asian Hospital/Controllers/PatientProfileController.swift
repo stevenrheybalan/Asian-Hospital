@@ -10,21 +10,10 @@ import UIKit
 
 class PatientProfileController: UITableViewController {
     
-    let tableViewItems: [TableViewItem] = [
-        TableViewItem(title: "Health Information", rowHeight: 165, items: [
-            Item(title: "Demographics", subtitle: "", image: #imageLiteral(resourceName: "Profile")),
-            Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
-            Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
-            Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
-        TableViewItem(title: "Summary", rowHeight: 200, items: [
-            Item(title: "Health Record Summary", subtitle: "Apple HealthKit", image: #imageLiteral(resourceName: "Heart"), buttonTitle: "Download")]),
-        TableViewItem(title: "Others", rowHeight: 200, items: [
-            Item(title: "Patient Barcode", subtitle: "Apple Wallet", image: #imageLiteral(resourceName: "Barcode"), buttonTitle: "Generate"),
-            Item(title: "Billing Details", subtitle: "Inpatient Only", image: #imageLiteral(resourceName: "Bill"), buttonTitle: "Generate")])
-    ]
+    @IBOutlet weak var greetingsLabel: UILabel!
     
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
-        return PatientProfileDataSourceDelegate(tableViewItems: tableViewItems)
+        return PatientProfileDataSourceDelegate(tableViewItems: Constants.patientTableViewItems)
     }()
     
     override func viewDidLoad() {
@@ -32,10 +21,43 @@ class PatientProfileController: UITableViewController {
         
         tableView.dataSource = dataSourceDelegate
         tableView.delegate = dataSourceDelegate
+        
+        greetingsLabel.text = generateGreetings(usingName: "Steven")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: METHODS
+    
+    func generateGreetings(usingName name: String) -> String {
+        var greeting = ""
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let currentHour = calendar.component(.hour, from: date)
+        let hourInt = Int(currentHour.description)!
+        
+        if hourInt >= 7 && hourInt <= 12 {
+            greeting = "Good morning"
+        }else if hourInt >= 12 && hourInt <= 16 {
+            greeting = "Good afternoon"
+        }else if hourInt >= 16 && hourInt <= 20 {
+            greeting = "Good evening"
+        }else if hourInt >= 20 && hourInt <= 24 {
+            greeting = "Good night"
+        }else if hourInt >= 0 && hourInt <= 7 {
+            greeting = "You should be sleeping right now"
+        }
+        
+        return "\(greeting) \(name)!"
+    }
+    
+    // MARK: ACTIONS
+    
+    @IBAction func logoutButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
 }

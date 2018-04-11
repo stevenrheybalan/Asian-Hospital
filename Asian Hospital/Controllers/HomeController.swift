@@ -11,16 +11,8 @@ import UIKit
 class HomeController: UITableViewController {
     
     lazy var dataSource: HomeDataSource = {
-        return HomeDataSource(items: Constant.homeMenuItems)
+        return HomeDataSource(items: Constants.homeMenuItems)
     }()
-
-    let menuIdentifier = [
-        "showPatientLogin",
-        "showDoctors",
-        "showLocation",
-        "showContacts",
-        "showAboutUs"
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +28,7 @@ class HomeController: UITableViewController {
     // MARK: TABLE VIEW DELEGATE
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let segueIdentifier = menuIdentifier[indexPath.row]
+        let segueIdentifier = Constants.menuIdentifier[indexPath.row]
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }

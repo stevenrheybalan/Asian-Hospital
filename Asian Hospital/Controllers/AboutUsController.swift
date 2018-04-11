@@ -11,7 +11,7 @@ import UIKit
 class AboutUsController: UITableViewController {
     
     lazy var dataSource: AboutUsDataSource = {
-        return AboutUsDataSource(description: aboutUsData)
+        return AboutUsDataSource(description: Constants.descriptionString)
     }()
     
     override func viewDidLoad() {

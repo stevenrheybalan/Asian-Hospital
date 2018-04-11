@@ -8,7 +8,15 @@
 
 import Foundation
 
-struct Constant {
+struct Constants {
+    static let menuIdentifier = [
+        "showPatientLogin",
+        "showDoctors",
+        "showLocation",
+        "showContacts",
+        "showAboutUs"
+    ]
+    
     static let homeMenuItems: [Item] = [
         Item(title: "Patient", subtitle: "We provide on-hand health information and quick bill access just for you", image: #imageLiteral(resourceName: "Heart")),
         Item(title: "Our Doctors", subtitle: "Keep well-versed as we provided the list and information of doctors available to help you", image: #imageLiteral(resourceName: "Doctor")),
@@ -16,19 +24,35 @@ struct Constant {
         Item(title: "Contact Us", subtitle: "Get in touch at ease as you can now quickly contact us directly", image: #imageLiteral(resourceName: "Contact")),
         Item(title: "About Us", subtitle: "", image: #imageLiteral(resourceName: "Hospital"))
     ]
-
-    static let hotlines = [
-        "contacts": [
-            ["contact_name": "Emergency Hotline", "contact_number": "(02) 876-5739"],
-            ["contact_name": "Admission", "contact_number": "(02) 876-5716"],
-            ["contact_name": "Asian Cancer Institute", "contact_number": "(02) 876-5842"],
-            ["contact_name": "Center for Executive Unit", "contact_number": "(02) 876-5796"],
-            ["contact_name": "Guest Services", "contact_number": "(02) 876-5827"],
-            ["contact_name": "International Health", "contact_number": "(02) 876-5838"],
-            ["contact_name": "Laboratory", "contact_number": "(02) 876-5759"],
-            ["contact_name": "Radiology", "contact_number": "(02) 876-5720"],
-            ["contact_name": "Trunkline", "contact_number": "(02) 771-9000"]
-        ]
+    
+    static let patientTableViewItems: [TableViewItem] = [
+        TableViewItem(title: "Health Information", rowHeight: 165, hasCollectionView: true, items: [
+            Item(title: "Demographics", subtitle: "", image: #imageLiteral(resourceName: "Profile")),
+            Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
+            Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
+            Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
+        TableViewItem(title: "Summary", rowHeight: 184, hasCollectionView: false, items: [
+            Item(title: "Health Record Summary", subtitle: "Apple HealthKit", image: #imageLiteral(resourceName: "Heart"), buttonTitle: "Download")]),
+        TableViewItem(title: "Others", rowHeight: 184, hasCollectionView: false, items: [
+            Item(title: "Patient Barcode", subtitle: "Apple Wallet", image: #imageLiteral(resourceName: "Barcode"), buttonTitle: "Generate"),
+            Item(title: "Billing Details", subtitle: "Inpatient Only", image: #imageLiteral(resourceName: "Bill"), buttonTitle: "Generate")])
+    ]
+    
+    static let contactTableViewItems: [TableViewItem] = [
+        TableViewItem(title: "", rowHeight: 165, hasCollectionView: true, items: [
+            Item(title: "Facebook", subtitle: "www.facebook.com/AsianHospitalPH", image: #imageLiteral(resourceName: "Facebook")),
+            Item(title: "Twitter", subtitle: "www.twitter.com/asianhospitalPH", image: #imageLiteral(resourceName: "Twitter")),
+            Item(title: "Website", subtitle: "www.asianhospital.com", image: #imageLiteral(resourceName: "Website"))]),
+        TableViewItem(title: "Telephone Directory", rowHeight: 65, hasCollectionView: false, items: [
+            Item(title: "Emergency Hotline", subtitle: "(02) 876-5739", image: nil),
+            Item(title: "Admission", subtitle: "(02) 876-5716", image: nil),
+            Item(title: "Asian Cancer Institute", subtitle: "(02) 876-5842", image: nil),
+            Item(title: "Center for Executive Unit", subtitle: "(02) 876-5796", image: nil),
+            Item(title: "Guest Services", subtitle: "(02) 876-5827", image: nil),
+            Item(title: "International Health", subtitle: "(02) 876-5838", image: nil),
+            Item(title: "Laboratory", subtitle: "(02) 876-5759", image: nil),
+            Item(title: "Radiology", subtitle: "(02) 876-5720", image: nil),
+            Item(title: "Trunkline", subtitle: "(02) 771-9000", image: nil)])
     ]
     
     static let descriptionString = """

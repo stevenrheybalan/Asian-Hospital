@@ -10,8 +10,8 @@ import UIKit
 
 class PatientProfileDataSourceDelegate: NSObject{
     
-    var tableViewItems = [TableViewItem]()
-    var storedOffsets = [Int: CGFloat]()
+    private var tableViewItems = [TableViewItem]()
+    private var storedOffsets = [Int: CGFloat]()
     
     init(tableViewItems: [TableViewItem]) {
         self.tableViewItems = tableViewItems
@@ -29,9 +29,7 @@ extension PatientProfileDataSourceDelegate: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return 1 }
-        
-        return tableViewItems[section].items.count
+        return tableViewItems[section].hasCollectionView ? 1 : tableViewItems[section].items.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

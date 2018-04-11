@@ -26,7 +26,9 @@ class LocationController: UIViewController {
     // MARK: ACTIONS
     
     @IBAction func showLocation() {
-        let coordinates = CLLocationCoordinate2DMake(coordinateData.latitude, coordinateData.longitude)
+        let hospitalCoordinate = Constants.hospitalCoordinate
+        
+        let coordinates = CLLocationCoordinate2DMake(hospitalCoordinate.latitude, hospitalCoordinate.longitude)
         let regionDistance: CLLocationDistance = 1000
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]

@@ -11,7 +11,7 @@ import UIKit
 class HorizontalMenuCell: UITableViewCell {
     
     static let reuseIdentifier = "HorizontalMenuCell"
-
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     var items = [Item]()
@@ -30,9 +30,8 @@ class HorizontalMenuCell: UITableViewCell {
         super.awakeFromNib()
         
         collectionView.dataSource = self
-        collectionView.delegate = self
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -40,7 +39,7 @@ class HorizontalMenuCell: UITableViewCell {
     }
 }
 
-extension HorizontalMenuCell: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HorizontalMenuCell: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
