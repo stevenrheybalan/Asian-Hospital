@@ -11,9 +11,11 @@ import UIKit
 class PatientProfileDataSourceDelegate: NSObject{
     
     private var tableViewItems = [TableViewItem]()
+    private var viewController: UIViewController!
     private var storedOffsets = [Int: CGFloat]()
     
-    init(tableViewItems: [TableViewItem]) {
+    init(viewController: UIViewController, tableViewItems: [TableViewItem]) {
+        self.viewController = viewController
         self.tableViewItems = tableViewItems
         super.init()
     }
@@ -32,10 +34,6 @@ extension PatientProfileDataSourceDelegate: UITableViewDataSource {
         return tableViewItems[section].hasCollectionView ? 1 : tableViewItems[section].items.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableViewItems[indexPath.section].rowHeight
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
@@ -52,15 +50,18 @@ extension PatientProfileDataSourceDelegate: UITableViewDataSource {
 }
 
 extension PatientProfileDataSourceDelegate: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableViewItems[indexPath.section].rowHeight
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
             guard let horizontalCell = cell as? HorizontalMenuCell else { return }
             let row = indexPath.row
             
-            // TODO: Set data source and delegate
+            horizontalCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: row)
             
-//            horizontalCell.items = tableViewItems[indexPath.section].items
             horizontalCell.collectionViewOffset = storedOffsets[row] ?? 0
         case 1, 2:
             guard let largeMenuCell = cell as? LargeMenuCell else { return }
@@ -83,5 +84,38 @@ extension PatientProfileDataSourceDelegate: UITableViewDelegate {
             storedOffsets[row] = horizontalCell.collectionViewOffset
         default: break
         }
+    }
+}
+
+extension PatientProfileDataSourceDelegate: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tableViewItems[collectionView.tag].items.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.reuseIdentifier, for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
+        let section = collectionView.tag
+        let row = indexPath.row
+        let item = tableViewItems[section].items[row]
+        
+        cell.titleLabel.text = item.title
+        cell.imageView.image = item.image
+        
+        cell.configureCell()
+        
+        return cell
+    }
+}
+
+extension PatientProfileDataSourceDelegate: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = collectionView.tag
+        let row = indexPath.row
+        
+        print("Selected: \(tableViewItems[section].items[row].title)")
     }
 }

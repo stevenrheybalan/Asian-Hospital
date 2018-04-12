@@ -14,8 +14,6 @@ class HorizontalMenuCell: UITableViewCell {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    var items = [Item]()
-    
     var collectionViewOffset: CGFloat {
         get {
             return collectionView.contentOffset.x
@@ -29,7 +27,6 @@ class HorizontalMenuCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView.dataSource = self
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,26 +34,12 @@ class HorizontalMenuCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-}
-
-extension HorizontalMenuCell: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.reuseIdentifier, for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
-        let row = indexPath.row
+    
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(dataSourceDelegate: D, forRow row: Int) {
+        collectionView.dataSource = dataSourceDelegate
+        collectionView.delegate = dataSourceDelegate
         
-        cell.configureCell()
-
-        cell.titleLabel.text = items[row].title
-        cell.imageView.image = items[row].image
-
-        return cell
+        collectionView.tag = row
+        collectionView.reloadData()
     }
 }

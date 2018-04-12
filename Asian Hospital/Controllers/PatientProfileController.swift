@@ -13,7 +13,7 @@ class PatientProfileController: UITableViewController {
     @IBOutlet weak var greetingsLabel: UILabel!
     
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
-        return PatientProfileDataSourceDelegate(tableViewItems: Constants.patientTableViewItems)
+        return PatientProfileDataSourceDelegate(viewController: self, tableViewItems: Constants.patientTableViewItems)
     }()
     
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ class PatientProfileController: UITableViewController {
             greeting = "You should be sleeping right now"
         }
         
-        return "\(greeting) \(name)!"
+        return "\(greeting), \(name)!"
     }
     
     // MARK: ACTIONS

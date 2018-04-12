@@ -62,20 +62,19 @@ class PatientLoginController: UIViewController {
     // MARK: ACTIONS
     
     @IBAction func proceedButtonTapped() {
-        guard let username = hospitalNumberTextField.text, username.count >= 8 else {
-            shakeTextField(hospitalNumberTextField)
-            return
-        }
-        
-        guard let password = passwordTextField.text, password.count >= 8 else {
-            shakeTextField(passwordTextField)
-            return
-        }
-        
+//        guard let username = hospitalNumberTextField.text, username.count >= 8 else {
+//            shakeTextField(hospitalNumberTextField)
+//            return
+//        }
+//
+//        guard let password = passwordTextField.text, password.count >= 8 else {
+//            shakeTextField(passwordTextField)
+//            return
+//        }
+//
 //        requestOAuthToken(username: username, password: password)
         
         // FOR TESTING ONLY
-        passwordTextField.text = ""
         performSegue(withIdentifier: "showPatientProfile", sender: self)
     }
     

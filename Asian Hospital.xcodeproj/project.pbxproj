@@ -40,7 +40,6 @@
 		72B27614207C5AA900D42CD2 /* LargeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B27613207C5AA900D42CD2 /* LargeMenuCell.swift */; };
 		72B2761A207C5CE900D42CD2 /* TableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B27619207C5CE900D42CD2 /* TableViewItem.swift */; };
 		72BB65AB207DDA3C009A14E7 /* ContactDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB65AA207DDA3C009A14E7 /* ContactDataSourceDelegate.swift */; };
-		72BB65AE207DEBFB009A14E7 /* ContactCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB65AD207DEBFB009A14E7 /* ContactCollectionViewDelegate.swift */; };
 		72DF56C920736E480096F93F /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DF56C820736E480096F93F /* HomeMenuCell.swift */; };
 		72DF56CB20736E790096F93F /* HomeMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DF56CA20736E790096F93F /* HomeMenuCellViewModel.swift */; };
 		72E4024A206A2193004B6CE6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40249206A2192004B6CE6 /* Contact.swift */; };
@@ -91,7 +90,6 @@
 		72B27613207C5AA900D42CD2 /* LargeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeMenuCell.swift; sourceTree = "<group>"; };
 		72B27619207C5CE900D42CD2 /* TableViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewItem.swift; sourceTree = "<group>"; };
 		72BB65AA207DDA3C009A14E7 /* ContactDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSourceDelegate.swift; sourceTree = "<group>"; };
-		72BB65AD207DEBFB009A14E7 /* ContactCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		72DF56C820736E480096F93F /* HomeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
 		72DF56CA20736E790096F93F /* HomeMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuCellViewModel.swift; sourceTree = "<group>"; };
 		72E40249206A2192004B6CE6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				7246B20A205F6EA50094DC45 /* Info.plist */,
 				7246B210205F6EDA0094DC45 /* Asian Hospital.entitlements */,
 				7246B219205F760C0094DC45 /* View Models */,
-				72BB65AC207DEBE0009A14E7 /* Delegate */,
 				7246B218205F76050094DC45 /* Data Sources */,
 				7246B217205F75FD0094DC45 /* Networking */,
 				7246B216205F75F60094DC45 /* Controllers */,
@@ -275,14 +272,6 @@
 				72B27613207C5AA900D42CD2 /* LargeMenuCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		72BB65AC207DEBE0009A14E7 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				72BB65AD207DEBFB009A14E7 /* ContactCollectionViewDelegate.swift */,
-			);
-			path = Delegate;
 			sourceTree = "<group>";
 		};
 		72E4024B206A2524004B6CE6 /* Data */ = {
@@ -450,7 +439,6 @@
 				72A457E420745E92001EEC6B /* DoctorsController.swift in Sources */,
 				72E40263206B1EE7004B6CE6 /* AboutUsCell.swift in Sources */,
 				72062C0820735AF7001640CB /* Constants.swift in Sources */,
-				72BB65AE207DEBFB009A14E7 /* ContactCollectionViewDelegate.swift in Sources */,
 				727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */,
 				7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */,
 				7246B224205F76BE0094DC45 /* Result.swift in Sources */,
