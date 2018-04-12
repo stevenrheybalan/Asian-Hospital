@@ -58,7 +58,9 @@ extension PatientProfileDataSourceDelegate: UITableViewDelegate {
             guard let horizontalCell = cell as? HorizontalMenuCell else { return }
             let row = indexPath.row
             
-            horizontalCell.items = tableViewItems[indexPath.section].items
+            // TODO: Set data source and delegate
+            
+//            horizontalCell.items = tableViewItems[indexPath.section].items
             horizontalCell.collectionViewOffset = storedOffsets[row] ?? 0
         case 1, 2:
             guard let largeMenuCell = cell as? LargeMenuCell else { return }

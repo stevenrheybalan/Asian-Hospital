@@ -40,9 +40,9 @@ struct Constants {
     
     static let contactTableViewItems: [TableViewItem] = [
         TableViewItem(title: "", rowHeight: 165, hasCollectionView: true, items: [
-            Item(title: "Facebook", subtitle: "www.facebook.com/AsianHospitalPH", image: #imageLiteral(resourceName: "Facebook")),
-            Item(title: "Twitter", subtitle: "www.twitter.com/asianhospitalPH", image: #imageLiteral(resourceName: "Twitter")),
-            Item(title: "Website", subtitle: "www.asianhospital.com", image: #imageLiteral(resourceName: "Website"))]),
+            Item(title: "Facebook", subtitle: "https://www.facebook.com/AsianHospitalPH", image: #imageLiteral(resourceName: "Facebook")),
+            Item(title: "Twitter", subtitle: "https://www.twitter.com/asianhospitalPH", image: #imageLiteral(resourceName: "Twitter")),
+            Item(title: "Website", subtitle: "http://www.asianhospital.com", image: #imageLiteral(resourceName: "Website"))]),
         TableViewItem(title: "Telephone Directory", rowHeight: 65, hasCollectionView: false, items: [
             Item(title: "Emergency Hotline", subtitle: "(02) 876-5739", image: nil),
             Item(title: "Admission", subtitle: "(02) 876-5716", image: nil),

@@ -12,13 +12,14 @@ import SafariServices
 class ContactController: UITableViewController {
     
     private lazy var dataSourceDelegate: ContactDataSourceDelegate = {
-        return ContactDataSourceDelegate(tableViewItems: Constants.contactTableViewItems)
+        return ContactDataSourceDelegate(viewController: self, tableViewItems: Constants.contactTableViewItems)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = dataSourceDelegate
+        tableView.delegate = dataSourceDelegate
     }
     
     override func didReceiveMemoryWarning() {
