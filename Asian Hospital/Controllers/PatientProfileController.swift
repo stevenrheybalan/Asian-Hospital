@@ -16,6 +16,8 @@ class PatientProfileController: UITableViewController {
         return PatientProfileDataSourceDelegate(viewController: self, tableViewItems: Constants.patientTableViewItems)
     }()
     
+    private let client = HopprlabClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +55,10 @@ class PatientProfileController: UITableViewController {
         }
         
         return "\(greeting), \(name)!"
+    }
+    
+    func sendUserAction() {
+        guard let userAccount = UserAccount.loadFromKeychain() else { return }
     }
     
     // MARK: ACTIONS

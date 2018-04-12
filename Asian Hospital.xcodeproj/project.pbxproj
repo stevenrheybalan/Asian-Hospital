@@ -50,6 +50,7 @@
 		72E40263206B1EE7004B6CE6 /* AboutUsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40262206B1EE7004B6CE6 /* AboutUsCell.swift */; };
 		72E40265206B2E33004B6CE6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40264206B2E33004B6CE6 /* Coordinate.swift */; };
 		72E40269206B2FEF004B6CE6 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40268206B2FEF004B6CE6 /* LocationController.swift */; };
+		72F06B6E207F365100B850D0 /* NormalMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F06B6D207F365100B850D0 /* NormalMenuCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		72E40262206B1EE7004B6CE6 /* AboutUsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCell.swift; sourceTree = "<group>"; };
 		72E40264206B2E33004B6CE6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		72E40268206B2FEF004B6CE6 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		72F06B6D207F365100B850D0 /* NormalMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMenuCell.swift; sourceTree = "<group>"; };
 		D63417934C20AD010F3A2B3E /* Pods-Asian Hospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asian Hospital.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +272,7 @@
 				72B2760D207B517300D42CD2 /* HorizontalMenuCell.swift */,
 				72B2760B207B502900D42CD2 /* MenuCollectionViewCell.swift */,
 				72B27613207C5AA900D42CD2 /* LargeMenuCell.swift */,
+				72F06B6D207F365100B850D0 /* NormalMenuCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				72A457E6207460ED001EEC6B /* DoctorsDataSource.swift in Sources */,
 				72E40265206B2E33004B6CE6 /* Coordinate.swift in Sources */,
+				72F06B6E207F365100B850D0 /* NormalMenuCell.swift in Sources */,
 				72E4025F206B1AB0004B6CE6 /* AboutUsDataSource.swift in Sources */,
 				72E40255206A2E8D004B6CE6 /* ContactCellViewModel.swift in Sources */,
 				72062C0C20736C5A001640CB /* Item.swift in Sources */,

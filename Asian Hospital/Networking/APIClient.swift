@@ -14,14 +14,20 @@ enum APIError: Error {
     case invalidData
     case responseUnsuccessful
     case jsonParsingFailure
+    case unauthorizedToken
+    case activationOnProgress
+    case noRecordFound
     
     var localizedDescription: String {
         switch self {
-        case .requestFailed: return "Request Failed"
-        case .invalidData: return "Invalid Data"
-        case .responseUnsuccessful: return "Response Unsuccessful"
-        case .jsonParsingFailure: return "JSON Parsing Failure"
-        case .jsonConversionFailure: return "JSON Conversion Failure"
+            case .requestFailed: return "Request Failed"
+            case .invalidData: return "Invalid Data"
+            case .responseUnsuccessful: return "Response Unsuccessful"
+            case .jsonParsingFailure: return "JSON Parsing Failure"
+            case .jsonConversionFailure: return "JSON Conversion Failure"
+            case .unauthorizedToken: return "Token is Invalid"
+        case .activationOnProgress: return "Activation is on Progress"
+            case .noRecordFound: return "No Record Found"
         }
     }
 }
@@ -61,6 +67,19 @@ extension APIClient {
         }
         
         return task
+    }
+    
+    func fetch(with request: URLRequest, completion: @escaping (Result<Int, APIError>) -> Void) {
+        let task = session.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(Result.failure(.requestFailed))
+                return
+            }
+            
+            completion(Result.success(httpResponse.statusCode))
+        }
+        
+        task.resume()
     }
     
     func fetch<T: JSONDecodable>(with request: URLRequest, parse: @escaping (JSON) -> T?, completion: @escaping (Result<T, APIError>) -> Void) {

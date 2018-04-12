@@ -19,7 +19,7 @@ class HopprlabClient: APIClient {
         self.init(configuration: .default)
     }
     
-    func requestToken(withUsername username: String, password: String, completion: @escaping (Result<UserAccount, APIError>) -> Void) {
+    private func requestToken(withUsername username: String, password: String, completion: @escaping (Result<UserAccount, APIError>) -> Void) {
         let grantType = "password"
         let clientId = "COA01"
         let clientSecret = "open@pi01"
@@ -38,6 +38,38 @@ class HopprlabClient: APIClient {
         fetch(with: request, parse: { (json: [String: AnyObject]) -> UserAccount? in
             return UserAccount(json: json)
         }, completion: completion)
+    }
+    
+    func validateUser(withUsername username: String, password: String, completion: @escaping (Result<UserAccount, APIError>) -> Void) {
+        requestToken(withUsername: username, password: password) { (result) in
+            switch result {
+                case .success(let userAccount):
+                    let endpoint = HopprLab.requestdumpingStatus(username: userAccount.username)
+                    let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
+                    
+                    self.fetch(with: request, completion: { (result) in
+                        switch result {
+                            case .success(let statusCode):
+                                switch statusCode {
+                                    case 200:
+                                        completion(Result.success(userAccount))
+                                    case 401:
+                                        completion(Result.failure(.unauthorizedToken))
+                                    case 409:
+                                        completion(Result.failure(.activationOnProgress))
+                                    case 500:
+                                        completion(Result.failure(.activationOnProgress))
+                                    default:
+                                        completion(Result.failure(.requestFailed))
+                                }
+                            case .failure(let error):
+                                completion(Result.failure(error))
+                        }
+                    })
+                case .failure(let error):
+                    completion(Result.failure(error))
+            }
+        }
     }
     
     func search(withTerm term: String, limit: Int = 10, sortBy sortType: HopprLab.DoctorSortType = .name, completion: @escaping (Result<[Doctor], APIError>) -> Void) {
