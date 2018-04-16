@@ -80,9 +80,12 @@ enum HopprLab {
         }
     }
     
+    // Patient
     case requestToken
     case requestdumpingStatus(username: String)
     case sendUserAction
+    case requestPatientInformation(type: PatientInformationType, username: String)
+    // Doctor
     case searchDoctor(term: String, limit: Int?, sortBy: DoctorSortType?)
 }
 
@@ -96,6 +99,7 @@ extension HopprLab: Endpoint {
             case .requestToken: return "/openAPI/token"
             case .requestdumpingStatus(let username): return "/openAPI/CheckDumpingStatus/\(username)"
             case .sendUserAction: return "/openAPI/Audit/PostUserActions"
+            case .requestPatientInformation(let type, _): return "/openAPI/\(type.path)"
             case .searchDoctor: return "/openAPI/Doctor/Info"
         }
     }
@@ -105,6 +109,10 @@ extension HopprLab: Endpoint {
             case .requestToken: return []
             case .requestdumpingStatus: return []
             case .sendUserAction: return []
+            case .requestPatientInformation(_, let username):
+                return [
+                    URLQueryItem(name: "hn", value: username)
+                ]
             case .searchDoctor(let term, let limit, let sortBy):
                 return [
                     URLQueryItem(name: "term", value: term),

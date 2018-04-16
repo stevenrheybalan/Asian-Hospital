@@ -47,6 +47,7 @@ class PatientLoginController: UIViewController {
             case .success(let userAccount):
                 DispatchQueue.main.async {
                     do {
+                        userAccount.password = password
                         try userAccount.save()
                         
                         self.performSegue(withIdentifier: "showPatientProfile", sender: self)

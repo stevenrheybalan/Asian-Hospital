@@ -60,11 +60,9 @@ extension ContactDataSourceDelegate: UITableViewDelegate {
         case 0:
             guard let horizontalCell = cell as? HorizontalMenuCell else { return }
             let row = indexPath.row
-//            let items = tableViewItems[indexPath.section].items
             
             horizontalCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: row)
-            
-//            horizontalCell.items = items
+        
             horizontalCell.collectionViewOffset = storedOffsets[row] ?? 0
         case 1:
             guard let contactCell = cell as? ContactCell else { return }

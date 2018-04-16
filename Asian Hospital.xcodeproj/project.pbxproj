@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3C8193CEC061E5D6EA1ABCE5 /* Pods_Asian_Hospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */; };
+		7201F5F6207F74DA00D19015 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201F5F5207F74DA00D19015 /* UserAction.swift */; };
 		72062C0620735588001640CB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0520735588001640CB /* HomeController.swift */; };
 		72062C0820735AF7001640CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0720735AF7001640CB /* Constants.swift */; };
 		72062C0A20736B85001640CB /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0920736B85001640CB /* HomeDataSource.swift */; };
 		72062C0C20736C5A001640CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0B20736C5A001640CB /* Item.swift */; };
 		72204B67207B0238007C4E84 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72204B66207B0238007C4E84 /* HTTPMethod.swift */; };
 		72204B69207B2CB8007C4E84 /* PatientProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72204B68207B2CB8007C4E84 /* PatientProfileController.swift */; };
+		722586B6208032DA000D1A9A /* DeviceModelName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722586B5208032DA000D1A9A /* DeviceModelName.swift */; };
+		722586B820803C59000D1A9A /* PatientInformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722586B720803C59000D1A9A /* PatientInformationType.swift */; };
 		72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72312A1D2071D8F00050375E /* PatientLoginController.swift */; };
 		7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B1FE205F6EA50094DC45 /* AppDelegate.swift */; };
 		7246B204205F6EA50094DC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7246B202205F6EA50094DC45 /* Main.storyboard */; };
@@ -56,12 +59,15 @@
 /* Begin PBXFileReference section */
 		0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asian_Hospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C2591453A19E04D1B5C95C /* Pods-Asian Hospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asian Hospital.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital.release.xcconfig"; sourceTree = "<group>"; };
+		7201F5F5207F74DA00D19015 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		72062C0520735588001640CB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		72062C0720735AF7001640CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72062C0920736B85001640CB /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		72062C0B20736C5A001640CB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		72204B66207B0238007C4E84 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		72204B68207B2CB8007C4E84 /* PatientProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientProfileController.swift; sourceTree = "<group>"; };
+		722586B5208032DA000D1A9A /* DeviceModelName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModelName.swift; sourceTree = "<group>"; };
+		722586B720803C59000D1A9A /* PatientInformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientInformationType.swift; sourceTree = "<group>"; };
 		72312A1D2071D8F00050375E /* PatientLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginController.swift; sourceTree = "<group>"; };
 		7246B1FB205F6EA50094DC45 /* Asian Hospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asian Hospital.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7246B1FE205F6EA50094DC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +133,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		722586BB20803FCE000D1A9A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				725DC57A20774F84007F4FC9 /* UserAccount.swift */,
+				7201F5F5207F74DA00D19015 /* UserAction.swift */,
+				722586B720803C59000D1A9A /* PatientInformationType.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		722586BC20803FED000D1A9A /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				7246B226205F78780094DC45 /* Doctor.swift */,
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
 		7246B1F2205F6EA50094DC45 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +172,7 @@
 		7246B1FD205F6EA50094DC45 /* Asian Hospital */ = {
 			isa = PBXGroup;
 			children = (
+				726BF29220842F08006FE5DB /* Stub */,
 				7246B20A205F6EA50094DC45 /* Info.plist */,
 				7246B210205F6EDA0094DC45 /* Asian Hospital.entitlements */,
 				7246B219205F760C0094DC45 /* View Models */,
@@ -175,11 +200,11 @@
 		7246B214205F75EB0094DC45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7246B226205F78780094DC45 /* Doctor.swift */,
+				722586BC20803FED000D1A9A /* Doctor */,
+				722586BB20803FCE000D1A9A /* Profile */,
 				72E40249206A2192004B6CE6 /* Contact.swift */,
 				72E40264206B2E33004B6CE6 /* Coordinate.swift */,
 				72062C0B20736C5A001640CB /* Item.swift */,
-				725DC57A20774F84007F4FC9 /* UserAccount.swift */,
 				72B27619207C5CE900D42CD2 /* TableViewItem.swift */,
 			);
 			path = Models;
@@ -262,6 +287,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		726BF29220842F08006FE5DB /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
 		7277153C2060D8F9003B53FC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				72062C0720735AF7001640CB /* Constants.swift */,
+				722586B5208032DA000D1A9A /* DeviceModelName.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -372,10 +405,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -438,6 +473,7 @@
 				72E40255206A2E8D004B6CE6 /* ContactCellViewModel.swift in Sources */,
 				72062C0C20736C5A001640CB /* Item.swift in Sources */,
 				72B27614207C5AA900D42CD2 /* LargeMenuCell.swift in Sources */,
+				7201F5F6207F74DA00D19015 /* UserAction.swift in Sources */,
 				7277153E2060D916003B53FC /* DoctorCell.swift in Sources */,
 				72B2760C207B502900D42CD2 /* MenuCollectionViewCell.swift in Sources */,
 				72A457E420745E92001EEC6B /* DoctorsController.swift in Sources */,
@@ -445,12 +481,14 @@
 				72062C0820735AF7001640CB /* Constants.swift in Sources */,
 				727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */,
 				7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */,
+				722586B820803C59000D1A9A /* PatientInformationType.swift in Sources */,
 				7246B224205F76BE0094DC45 /* Result.swift in Sources */,
 				72E4024A206A2193004B6CE6 /* Contact.swift in Sources */,
 				7246B227205F78780094DC45 /* Doctor.swift in Sources */,
 				7246B221205F76BE0094DC45 /* HopprlabClient.swift in Sources */,
 				72204B67207B0238007C4E84 /* HTTPMethod.swift in Sources */,
 				727715422060F269003B53FC /* DoctorDetailController.swift in Sources */,
+				722586B6208032DA000D1A9A /* DeviceModelName.swift in Sources */,
 				72B27612207C4AB700D42CD2 /* PatientProfileDataSourceDelegate.swift in Sources */,
 				72E40269206B2FEF004B6CE6 /* LocationController.swift in Sources */,
 				72204B69207B2CB8007C4E84 /* PatientProfileController.swift in Sources */,

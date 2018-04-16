@@ -24,7 +24,16 @@ class PatientProfileController: UITableViewController {
         tableView.dataSource = dataSourceDelegate
         tableView.delegate = dataSourceDelegate
         
-        greetingsLabel.text = generateGreetings(usingName: "Steven")
+        requestPatientDemographics()
+        
+        let greetings = Date().greetings
+        greetingsLabel.text = "\(greetings), Steven!"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        sendUserAction()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,12 +43,50 @@ class PatientProfileController: UITableViewController {
     
     // MARK: METHODS
     
-    func generateGreetings(usingName name: String) -> String {
+    func sendUserAction() {
+        guard let userAccount = UserAccount.loadFromKeychain() else { return }
+        
+        let deviceName = UIDevice.current.modelName
+        let systemVersion = "iOS \(UIDevice.current.systemVersion)"
+        let userAction = UserAction(userId: userAccount.username, deviceName: deviceName, osVersion: systemVersion, action: .login)
+        
+        client.sendUserAction(userAction) { (result) in
+            switch result {
+                case .success(_):
+                    print("User Action sent!")
+                case .failure(let error):
+                    print("Send User Action Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func requestPatientDemographics() {
+        guard let userAccount = UserAccount.loadFromKeychain() else { return }
+        
+        client.requestPatientInformation(type: .demographics, userAccount: userAccount) { (result) in
+            switch result {
+                case .success(let json):
+//                    print("JSON: \(json)")
+                    break
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    // MARK: ACTIONS
+    
+    @IBAction func logoutButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+private extension Date {
+    var greetings: String {
         var greeting = ""
         
-        let date = Date()
         let calendar = Calendar.current
-        let currentHour = calendar.component(.hour, from: date)
+        let currentHour = calendar.component(.hour, from: self)
         let hourInt = Int(currentHour.description)!
         
         if hourInt >= 7 && hourInt <= 12 {
@@ -54,16 +101,6 @@ class PatientProfileController: UITableViewController {
             greeting = "You should be sleeping right now"
         }
         
-        return "\(greeting), \(name)!"
-    }
-    
-    func sendUserAction() {
-        guard let userAccount = UserAccount.loadFromKeychain() else { return }
-    }
-    
-    // MARK: ACTIONS
-    
-    @IBAction func logoutButtonTapped() {
-        dismiss(animated: true, completion: nil)
+        return greeting
     }
 }

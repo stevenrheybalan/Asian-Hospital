@@ -26,7 +26,7 @@ enum APIError: Error {
             case .jsonParsingFailure: return "JSON Parsing Failure"
             case .jsonConversionFailure: return "JSON Conversion Failure"
             case .unauthorizedToken: return "Token is Invalid"
-        case .activationOnProgress: return "Activation is on Progress"
+            case .activationOnProgress: return "Activation is on Progress"
             case .noRecordFound: return "No Record Found"
         }
     }
@@ -67,19 +67,6 @@ extension APIClient {
         }
         
         return task
-    }
-    
-    func fetch(with request: URLRequest, completion: @escaping (Result<Int, APIError>) -> Void) {
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(Result.failure(.requestFailed))
-                return
-            }
-            
-            completion(Result.success(httpResponse.statusCode))
-        }
-        
-        task.resume()
     }
     
     func fetch<T: JSONDecodable>(with request: URLRequest, parse: @escaping (JSON) -> T?, completion: @escaping (Result<T, APIError>) -> Void) {
@@ -126,6 +113,46 @@ extension APIClient {
                 }else {
                     completion(Result.failure(.jsonParsingFailure))
                 }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func fetch(with request: URLRequest, completion: @escaping (Result<[JSON], APIError>) -> Void) {
+        let task = session.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(Result.failure(.requestFailed))
+                return
+            }
+            
+            print("Request \(request.url!)")
+            print("Status code: \(httpResponse.statusCode)")
+            
+            switch httpResponse.statusCode {
+                case 200:
+                    guard let data = data else {
+                        completion(Result.success([]))
+                        return
+                    }
+                    
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [JSON] {
+                            completion(Result.success(json))
+                        }else {
+                            completion(Result.success([]))
+                        }
+                    }catch {
+                        completion(Result.success([]))
+                    }
+                case 401:
+                    completion(Result.failure(.unauthorizedToken))
+                case 409:
+                    completion(Result.failure(.activationOnProgress))
+                case 500:
+                    completion(Result.failure(.activationOnProgress))
+                default:
+                    completion(Result.failure(.requestFailed))
             }
         }
         

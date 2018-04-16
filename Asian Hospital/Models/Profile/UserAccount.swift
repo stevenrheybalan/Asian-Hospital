@@ -11,6 +11,7 @@ import KeychainSwift
 
 class UserAccount: NSObject, JSONDecodable {
     let username: String
+    var password: String
     let accessToken: String
     let expirationPeriod: TimeInterval
     let grantDate: Date
@@ -19,6 +20,7 @@ class UserAccount: NSObject, JSONDecodable {
     
     struct Key {
         static let username = "username"
+        static let password = "password"
         static let accessToken = "access_token"
         static let expirationPeriod = "expires_in"
         static let grantDate = ".issued"
@@ -30,6 +32,7 @@ class UserAccount: NSObject, JSONDecodable {
             let expiration = json[Key.expirationPeriod] as? TimeInterval else { return nil }
         
         self.username = username
+        self.password = ""
         self.accessToken = token
         self.expirationPeriod = expiration
         self.grantDate = Date()
@@ -38,6 +41,7 @@ class UserAccount: NSObject, JSONDecodable {
     func save() throws {
         let dataDictionary: [String: Any] = [
             Key.username: username,
+            Key.password: password,
             Key.accessToken: accessToken,
             Key.expirationPeriod: expirationPeriod,
             Key.grantDate: grantDate

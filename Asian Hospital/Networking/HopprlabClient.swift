@@ -47,27 +47,74 @@ class HopprlabClient: APIClient {
                     let endpoint = HopprLab.requestdumpingStatus(username: userAccount.username)
                     let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
                     
-                    self.fetch(with: request, completion: { (result) in
+                    self.fetch(with: request) { (result) in
                         switch result {
-                            case .success(let statusCode):
-                                switch statusCode {
-                                    case 200:
-                                        completion(Result.success(userAccount))
-                                    case 401:
-                                        completion(Result.failure(.unauthorizedToken))
-                                    case 409:
-                                        completion(Result.failure(.activationOnProgress))
-                                    case 500:
-                                        completion(Result.failure(.activationOnProgress))
-                                    default:
-                                        completion(Result.failure(.requestFailed))
-                                }
+                            case .success(_):
+                                completion(Result.success(userAccount))
                             case .failure(let error):
                                 completion(Result.failure(error))
                         }
-                    })
+                    }
                 case .failure(let error):
                     completion(Result.failure(error))
+            }
+        }
+    }
+    
+    func sendUserAction(_ userAction: UserAction, completion: @escaping (Result<Bool, APIError>) -> Void) {
+        let parameters: Parameters = [
+            "application_id": String(userAction.applicationId),
+            "user_id": userAction.userId,
+            "device_name": userAction.deviceName,
+            "os_version": userAction.osVersion,
+            "location": userAction.location ?? "Not Available",
+            "action": userAction.action.rawValue
+        ]
+        
+        let endpoint = HopprLab.sendUserAction
+        let request = endpoint.request(with: parameters)
+        
+        fetch(with: request) { (result) in
+            switch result {
+                case .success(_):
+                    completion(Result.success(true))
+                case .failure(let error):
+                    completion(Result.failure(error))
+            }
+        }
+    }
+    
+    func requestPatientInformation(type: PatientInformationType, userAccount: UserAccount, completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
+        let endpoint = HopprLab.requestPatientInformation(type: type, username: userAccount.username)
+        let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
+        
+        fetch(with: request) { (result) in
+            switch result {
+            case .success(let json):
+                guard json.count != 0  else {
+                    completion(Result.failure(.jsonParsingFailure))
+                    return
+                }
+                
+                print(json)
+                
+//                switch type {
+//                    case .demographics:
+//
+//                }
+            case .failure(let error):
+                switch error {
+                    case .unauthorizedToken:
+                        self.requestToken(withUsername: userAccount.username, password: userAccount.password, completion: { (result) in
+                            switch result {
+                            case .success(let newUserAccount):
+                                self.requestPatientInformation(type: type, userAccount: newUserAccount, completion: completion)
+                            case .failure(let error):
+                                completion(Result.failure(error))
+                            }
+                        })
+                    default: completion(Result.failure(error))
+                }
             }
         }
     }
