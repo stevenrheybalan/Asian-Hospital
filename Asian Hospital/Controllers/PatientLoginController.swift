@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class PatientLoginController: UIViewController {
     
@@ -19,7 +20,7 @@ class PatientLoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        passwordTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,34 +30,35 @@ class PatientLoginController: UIViewController {
     
     // MARK: METHODS
     
-    func shakeTextField(_ textField: UITextField) {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.07
-        animation.repeatCount = 4
-        animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: textField.center.x - 10, y: textField.center.y))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: textField.center.x + 10, y: textField.center.y))
-        textField.layer.add(animation, forKey: "position")
-        
-        textField.becomeFirstResponder()
-    }
-    
     func validate(withUsername username: String, password: String) {
+        view.endEditing(true)
+        
+        let loadingAlertView = Constants.loadingAlertView
+        let alertViewResponder: SCLAlertViewResponder = loadingAlertView.showWait("Loading", subTitle: "Verifying your credentials", colorStyle: 0xE67E22)
+        
         client.validateUser(withUsername: username, password: password) { (result) in
-            switch result {
-            case .success(let userAccount):
-                DispatchQueue.main.async {
-                    do {
-                        userAccount.password = password
-                        try userAccount.save()
-                        
-                        self.performSegue(withIdentifier: "showPatientProfile", sender: self)
-                    }catch (let error) {
-                        print("Error: \(error.localizedDescription)")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                alertViewResponder.close()
+                
+                switch result {
+                case .success(let userAccount):
+                    DispatchQueue.main.async {
+                        do {
+                            userAccount.password = password
+                            try userAccount.save()
+                            
+                            self.passwordTextField.text = ""
+                            
+                            self.performSegue(withIdentifier: "showPatientProfile", sender: self)
+                        }catch (let error) {
+                            print("Error: \(error.localizedDescription)")
+                        }
                     }
+                case .failure(let error):
+                    SCLAlertView().showError("Error", subTitle: "There is something went wrong. Please try again.")
+                    
+                    print("Failed: \(error.localizedDescription)")
                 }
-            case .failure(let error):
-                print("Failed: \(error.localizedDescription)")
             }
         }
     }
@@ -65,12 +67,12 @@ class PatientLoginController: UIViewController {
     
     @IBAction func proceedButtonTapped() {
         guard let username = hospitalNumberTextField.text, username.count >= minimumLength else {
-            shakeTextField(hospitalNumberTextField)
+            hospitalNumberTextField.shake()
             return
         }
 
         guard let password = passwordTextField.text, password.count >= minimumLength else {
-            shakeTextField(passwordTextField)
+            passwordTextField.shake()
             return
         }
 
@@ -78,6 +80,32 @@ class PatientLoginController: UIViewController {
     }
     
     @IBAction func noAccountButtonTapped() {
+        let title = Constants.dataPrivacyString.title
+        let description = Constants.dataPrivacyString.description
         
+        SCLAlertView().showInfo(title, subTitle: description, closeButtonTitle: "OK")
+    }
+}
+
+extension PatientLoginController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == passwordTextField {
+            proceedButtonTapped()
+        }
+        return true
+    }
+}
+
+private extension UITextField {
+    func shake() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+        self.layer.add(animation, forKey: "position")
+        
+        self.becomeFirstResponder()
     }
 }

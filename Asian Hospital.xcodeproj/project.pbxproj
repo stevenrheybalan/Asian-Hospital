@@ -172,7 +172,6 @@
 		7246B1FD205F6EA50094DC45 /* Asian Hospital */ = {
 			isa = PBXGroup;
 			children = (
-				726BF29220842F08006FE5DB /* Stub */,
 				7246B20A205F6EA50094DC45 /* Info.plist */,
 				7246B210205F6EDA0094DC45 /* Asian Hospital.entitlements */,
 				7246B219205F760C0094DC45 /* View Models */,
@@ -285,13 +284,6 @@
 				7246B205205F6EA50094DC45 /* Assets.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		726BF29220842F08006FE5DB /* Stub */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stub;
 			sourceTree = "<group>";
 		};
 		7277153C2060D8F9003B53FC /* Cells */ = {

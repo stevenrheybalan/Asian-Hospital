@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SCLAlertView
 
 struct Constants {
     static let menuIdentifier = [
@@ -60,4 +61,11 @@ struct Constants {
     """
     
     static let hospitalCoordinate = Coordinate(latitude: 14.413492, longitude: 121.043787)
+    
+    static let dataPrivacyString = (title: "Data Privacy", description: "Because we protect your data.\nWe only allow an on-site creation of account.\n\nDue to Republic Act No. 10173 compliance.")
+    
+    static var loadingAlertView: SCLAlertView {
+        let appearance = SCLAlertView.SCLAppearance(showCloseButton: false)
+        return SCLAlertView(appearance: appearance)
+    }
 }

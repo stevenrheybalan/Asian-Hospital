@@ -1,0 +1,10 @@
+{
+    "access_token": "0_P_ej0lvzsRWJSfN9t8Hg0SowY-99kcjGBgdrpU9LiBYQbAilGded_ZK1j2W1w4LfHccvR_ZgWwZQihFlyCTm9RyJ-KqD68OwB6x_sduNXfBs2TUfOu6kXEpv0zGNpieQeWytBWx-so_Y9mzCWivKjdtKC_khHGC8PdmD8m9gQHHyq6n6b2Ks6HoPOZTA4DIVcFBbdJU6R95hs2VO8DdBEbtZmE_Zu9JFkHYMtPZU_Pkl_mHGQNU4jzmbqTfnJgisFvb_7JMq5Nb8-ozkkcCw",
+    "token_type": "bearer",
+    "expires_in": 3599,
+    "refresh_token": "a7ac78a39c194bc2af16230e482cc3b2",
+    "client_id": "COA01",
+    "username": "00000001",
+    ".issued": "Fri, 13 Apr 2018 07:35:26 GMT",
+    ".expires": "Fri, 13 Apr 2018 08:35:26 GMT"
+}
