@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class PatientProfileController: UITableViewController {
     
@@ -77,7 +78,12 @@ class PatientProfileController: UITableViewController {
     // MARK: ACTIONS
     
     @IBAction func logoutButtonTapped() {
-        dismiss(animated: true, completion: nil)
+        let confirmationAlertView = SCLAlertView()
+        confirmationAlertView.addButton("Yes") {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        confirmationAlertView.showWarning("Logout", subTitle: "Are you sure you want logout?", closeButtonTitle: "No")
     }
 }
 
