@@ -28,10 +28,10 @@ struct Constants {
     
     static let patientTableViewItems: [TableViewItem] = [
         TableViewItem(title: "Health Information", rowHeight: 165, hasCollectionView: true, items: [
-            Item(title: "Demographics", subtitle: "", image: #imageLiteral(resourceName: "Profile")),
-            Item(title: "Allergies", subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
-            Item(title: "Diagnosis", subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
-            Item(title: "Medications", subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
+            Item(title: PatientInformationType.demographics.rawValue, subtitle: "", image: #imageLiteral(resourceName: "Profile")),
+            Item(title: PatientInformationType.allergies.rawValue, subtitle: "", image: #imageLiteral(resourceName: "Allergies")),
+            Item(title: PatientInformationType.diagnosis.rawValue, subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
+            Item(title: PatientInformationType.medications.rawValue, subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
         TableViewItem(title: "Summary", rowHeight: 184, hasCollectionView: false, items: [
             Item(title: "Health Record Summary", subtitle: "Apple HealthKit", image: #imageLiteral(resourceName: "Heart"), buttonTitle: "Download")]),
         TableViewItem(title: "Others", rowHeight: 184, hasCollectionView: false, items: [

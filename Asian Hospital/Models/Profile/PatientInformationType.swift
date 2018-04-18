@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum PatientInformationType {
-    case demographics
-    case allergies
-    case diagnosis
-    case medications
+enum PatientInformationType: String {
+    case demographics = "Demographics"
+    case allergies = "Allergies"
+    case diagnosis = "Diagnosis"
+    case medications = "Medications"
 }
 
 extension PatientInformationType {

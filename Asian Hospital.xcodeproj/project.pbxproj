@@ -30,6 +30,12 @@
 		7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B220205F76BE0094DC45 /* Endpoint.swift */; };
 		7246B227205F78780094DC45 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B226205F78780094DC45 /* Doctor.swift */; };
 		725DC57B20774F84007F4FC9 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725DC57A20774F84007F4FC9 /* UserAccount.swift */; };
+		72626B632086DEE800462993 /* HealthInformationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72626B622086DEE800462993 /* HealthInformationDataSource.swift */; };
+		72626B652086E58F00462993 /* Demographics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72626B642086E58E00462993 /* Demographics.swift */; };
+		72626B67208713CC00462993 /* Allergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72626B66208713CC00462993 /* Allergy.swift */; };
+		72626B692087165800462993 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72626B682087165800462993 /* Diagnosis.swift */; };
+		72626B6B20871A5A00462993 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72626B6A20871A5A00462993 /* Medication.swift */; };
+		726BF29E20859B14006FE5DB /* HealthInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726BF29D20859B14006FE5DB /* HealthInformationController.swift */; };
 		7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */; };
 		7277153E2060D916003B53FC /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153D2060D916003B53FC /* DoctorCell.swift */; };
 		727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277153F2060D986003B53FC /* DoctorCellViewModel.swift */; };
@@ -84,6 +90,12 @@
 		7246B220205F76BE0094DC45 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7246B226205F78780094DC45 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		725DC57A20774F84007F4FC9 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		72626B622086DEE800462993 /* HealthInformationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInformationDataSource.swift; sourceTree = "<group>"; };
+		72626B642086E58E00462993 /* Demographics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographics.swift; sourceTree = "<group>"; };
+		72626B66208713CC00462993 /* Allergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergy.swift; sourceTree = "<group>"; };
+		72626B682087165800462993 /* Diagnosis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
+		72626B6A20871A5A00462993 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		726BF29D20859B14006FE5DB /* HealthInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInformationController.swift; sourceTree = "<group>"; };
 		7277153A2060D80F003B53FC /* DoctorSearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchResultsDataSource.swift; sourceTree = "<group>"; };
 		7277153D2060D916003B53FC /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		7277153F2060D986003B53FC /* DoctorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCellViewModel.swift; sourceTree = "<group>"; };
@@ -139,6 +151,10 @@
 				725DC57A20774F84007F4FC9 /* UserAccount.swift */,
 				7201F5F5207F74DA00D19015 /* UserAction.swift */,
 				722586B720803C59000D1A9A /* PatientInformationType.swift */,
+				72626B642086E58E00462993 /* Demographics.swift */,
+				72626B66208713CC00462993 /* Allergy.swift */,
+				72626B682087165800462993 /* Diagnosis.swift */,
+				72626B6A20871A5A00462993 /* Medication.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -226,6 +242,7 @@
 				72A457E320745E92001EEC6B /* DoctorsController.swift */,
 				72312A1D2071D8F00050375E /* PatientLoginController.swift */,
 				72204B68207B2CB8007C4E84 /* PatientProfileController.swift */,
+				726BF29D20859B14006FE5DB /* HealthInformationController.swift */,
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
 				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
 				72A457E72074A887001EEC6B /* ContactController.swift */,
@@ -256,6 +273,7 @@
 				72062C0920736B85001640CB /* HomeDataSource.swift */,
 				72A457E5207460ED001EEC6B /* DoctorsDataSource.swift */,
 				72B27611207C4AB700D42CD2 /* PatientProfileDataSourceDelegate.swift */,
+				72626B622086DEE800462993 /* HealthInformationDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -460,6 +478,7 @@
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				72A457E6207460ED001EEC6B /* DoctorsDataSource.swift in Sources */,
 				72E40265206B2E33004B6CE6 /* Coordinate.swift in Sources */,
+				72626B652086E58F00462993 /* Demographics.swift in Sources */,
 				72F06B6E207F365100B850D0 /* NormalMenuCell.swift in Sources */,
 				72E4025F206B1AB0004B6CE6 /* AboutUsDataSource.swift in Sources */,
 				72E40255206A2E8D004B6CE6 /* ContactCellViewModel.swift in Sources */,
@@ -467,9 +486,12 @@
 				72B27614207C5AA900D42CD2 /* LargeMenuCell.swift in Sources */,
 				7201F5F6207F74DA00D19015 /* UserAction.swift in Sources */,
 				7277153E2060D916003B53FC /* DoctorCell.swift in Sources */,
+				726BF29E20859B14006FE5DB /* HealthInformationController.swift in Sources */,
 				72B2760C207B502900D42CD2 /* MenuCollectionViewCell.swift in Sources */,
 				72A457E420745E92001EEC6B /* DoctorsController.swift in Sources */,
+				72626B632086DEE800462993 /* HealthInformationDataSource.swift in Sources */,
 				72E40263206B1EE7004B6CE6 /* AboutUsCell.swift in Sources */,
+				72626B692087165800462993 /* Diagnosis.swift in Sources */,
 				72062C0820735AF7001640CB /* Constants.swift in Sources */,
 				727715402060D986003B53FC /* DoctorCellViewModel.swift in Sources */,
 				7277153B2060D810003B53FC /* DoctorSearchResultsDataSource.swift in Sources */,
@@ -484,6 +506,8 @@
 				72B27612207C4AB700D42CD2 /* PatientProfileDataSourceDelegate.swift in Sources */,
 				72E40269206B2FEF004B6CE6 /* LocationController.swift in Sources */,
 				72204B69207B2CB8007C4E84 /* PatientProfileController.swift in Sources */,
+				72626B67208713CC00462993 /* Allergy.swift in Sources */,
+				72626B6B20871A5A00462993 /* Medication.swift in Sources */,
 				72DF56C920736E480096F93F /* HomeMenuCell.swift in Sources */,
 				7246B223205F76BE0094DC45 /* JSONDecodable.swift in Sources */,
 				7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */,

@@ -13,11 +13,19 @@ class PatientProfileController: UITableViewController {
     
     @IBOutlet weak var greetingsLabel: UILabel!
     
+    private let healthInformationSegue = "showHealthInformation"
+    
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
         return PatientProfileDataSourceDelegate(viewController: self, tableViewItems: Constants.patientTableViewItems)
     }()
     
     private let client = HopprlabClient()
+
+    var selectedType: PatientInformationType! {
+        didSet {
+            performSegue(withIdentifier: healthInformationSegue, sender: self)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +48,14 @@ class PatientProfileController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: NAVIGATION
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == healthInformationSegue, let healthInformationVC = segue.destination as? HealthInformationController {
+            healthInformationVC.informationType = selectedType
+        }
     }
     
     // MARK: METHODS

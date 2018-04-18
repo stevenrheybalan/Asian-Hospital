@@ -31,20 +31,10 @@ extension DoctorCellViewModel {
             subSpecialty = "No data"
         }
         
-        if let contactNumbers = doctor.contactNumbers, contactNumbers.count > 0 {
-            var combinedContactNumbers: String?
-            
-            for contactNumber in contactNumbers {
-                if let unwrappedCombinedContactNumbers = combinedContactNumbers {
-                    combinedContactNumbers = "\(unwrappedCombinedContactNumbers) • \(contactNumber.phoneNumber)"
-                }else {
-                    combinedContactNumbers = contactNumber.phoneNumber
-                }
-            }
-            
-            contactNumber = combinedContactNumbers ?? "No data"
+        if let contactNumbers = doctor.contactNumbers {
+            contactNumber = contactNumbers.reduce("") { "\($0) • \( $1.phoneNumber)" }
         }else {
-            contactNumber = "No data"
+            contactNumber = "No Data"
         }
     }
 }

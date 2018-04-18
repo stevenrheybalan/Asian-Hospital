@@ -115,7 +115,10 @@ extension PatientProfileDataSourceDelegate: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = collectionView.tag
         let row = indexPath.row
+        let informationTypeString = tableViewItems[section].items[row].title
         
-        print("Selected: \(tableViewItems[section].items[row].title)")
+        if let informationType = PatientInformationType(rawValue: informationTypeString), let patientProfileVC = viewController as? PatientProfileController {
+            patientProfileVC.selectedType = informationType
+        }
     }
 }
