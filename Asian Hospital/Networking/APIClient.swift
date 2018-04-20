@@ -69,6 +69,27 @@ extension APIClient {
         return task
     }
     
+    func fetchData(with request: URLRequest, completion: @escaping (Result<Data, APIError>) -> Void) {
+        let task = session.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(Result.failure(.requestFailed))
+                return
+            }
+            
+            if httpResponse.statusCode == 200 {
+                if let data = data {
+                    completion(Result.success(data))
+                }else {
+                    completion(Result.failure(.invalidData))
+                }
+            }else {
+                completion(Result.failure(.responseUnsuccessful))
+            }
+        }
+        
+        task.resume()
+    }
+    
     func fetch<T: JSONDecodable>(with request: URLRequest, parse: @escaping (JSON) -> T?, completion: @escaping (Result<T, APIError>) -> Void) {
         let task = jsonTask(with: request) { json, error in
             // At this point we are done in the background thread. So it's ok to switch to main thread.
@@ -119,7 +140,7 @@ extension APIClient {
         task.resume()
     }
     
-    func fetch(with request: URLRequest, completion: @escaping (Result<[JSON], APIError>) -> Void) {
+    func fetch(with request: URLRequest, parse: @escaping ([JSON]) -> [JSONDecodable], completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
         let task = session.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(Result.failure(.requestFailed))
@@ -132,15 +153,21 @@ extension APIClient {
             switch httpResponse.statusCode {
                 case 200:
                     guard let data = data else {
-                        completion(Result.success([]))
+                        completion(Result.failure(.invalidData))
                         return
                     }
                     
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [JSON] {
-                            completion(Result.success(json))
+                            guard json.count > 0 else {
+                                completion(Result.failure(.invalidData))
+                                return
+                            }
+                            
+                            let data = parse(json)
+                            completion(Result.success(data))
                         }else {
-                            completion(Result.success([]))
+                            completion(Result.failure(.invalidData))
                         }
                     }catch {
                         completion(Result.success([]))

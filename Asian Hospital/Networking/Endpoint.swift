@@ -123,3 +123,25 @@ extension HopprLab: Endpoint {
     }
 }
 
+enum Heroku {
+    case requestApplePass
+}
+
+extension Heroku: Endpoint {
+    var base: String {
+        return "https://hopprsandbox.herokuapp.com"
+    }
+    
+    var path: String {
+        switch self {
+            case .requestApplePass: return "/pass"
+        }
+    }
+    
+    var queryItems: [URLQueryItem] {
+        switch self {
+            case .requestApplePass: return []
+        }
+    }
+}
+

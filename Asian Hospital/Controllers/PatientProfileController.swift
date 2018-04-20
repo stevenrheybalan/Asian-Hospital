@@ -13,6 +13,7 @@ class PatientProfileController: UITableViewController {
     
     @IBOutlet weak var greetingsLabel: UILabel!
     
+    static let barcodeSegue = "showBarcode"
     private let healthInformationSegue = "showHealthInformation"
     
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
@@ -20,10 +21,22 @@ class PatientProfileController: UITableViewController {
     }()
     
     private let client = HopprlabClient()
-
+    
     var selectedType: PatientInformationType! {
         didSet {
             performSegue(withIdentifier: healthInformationSegue, sender: self)
+        }
+    }
+    
+    var demographics: Demographics? {
+        didSet {
+            let greetings = Date().greetings
+            
+            if let firstName = demographics?.firstName {
+                greetingsLabel.text = "\(greetings), \(firstName)!"
+            }else {
+                greetingsLabel.text = "\(greetings)!"
+            }
         }
     }
     
@@ -34,15 +47,7 @@ class PatientProfileController: UITableViewController {
         tableView.delegate = dataSourceDelegate
         
         requestPatientDemographics()
-        
-        let greetings = Date().greetings
-        greetingsLabel.text = "\(greetings), Steven!"
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        sendUserAction()
+        sendUserLoginAction()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,14 +58,22 @@ class PatientProfileController: UITableViewController {
     // MARK: NAVIGATION
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == healthInformationSegue, let healthInformationVC = segue.destination as? HealthInformationController {
-            healthInformationVC.informationType = selectedType
+        switch segue.identifier {
+            case healthInformationSegue:
+                if let healthInformationVC = segue.destination as? HealthInformationController {
+                    healthInformationVC.informationType = selectedType
+                }
+            case PatientProfileController.barcodeSegue:
+                if let barcodeVC = segue.destination as? BarcodeController {
+                    barcodeVC.demographics = demographics
+                }
+        default: break
         }
     }
     
     // MARK: METHODS
     
-    func sendUserAction() {
+    func sendUserLoginAction() {
         guard let userAccount = UserAccount.loadFromKeychain() else { return }
         
         let deviceName = UIDevice.current.modelName
@@ -78,15 +91,38 @@ class PatientProfileController: UITableViewController {
     }
     
     func requestPatientDemographics() {
-        guard let userAccount = UserAccount.loadFromKeychain() else { return }
+        let loadingAlertView = Constants.loadingAlertView
+        let alertViewResponder: SCLAlertViewResponder = loadingAlertView.showWait("Loading", subTitle: "Please wait while we are preparing your profile", colorStyle: 0xE67E22)
         
-        client.requestPatientInformation(type: .demographics, userAccount: userAccount) { (result) in
-            switch result {
-                case .success(let json):
-//                    print("JSON: \(json)")
-                    break
+        guard let userAccount = UserAccount.loadFromKeychain() else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                SCLAlertView().showError("Oooops!", subTitle: "There is something went wrong. Please try again.").setDismissBlock {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+            return
+        }
+        
+        client.requestPatientInformation(type: .demographics, userAccount: userAccount, parse: { (jsonArray) -> [JSONDecodable] in
+            return jsonArray.compactMap { Demographics(json: $0) }
+        }) { (result) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                alertViewResponder.close()
+                
+                switch result {
+                case .success(let demographicsArray):
+                    guard let demographics = demographicsArray.first as? Demographics else {
+                        return
+                    }
+                    
+                    self.demographics = demographics
                 case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                    print(error)
+                    
+                    SCLAlertView().showError("Oooops!", subTitle: "There is something went wrong. Please try again.").setDismissBlock {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
             }
         }
     }

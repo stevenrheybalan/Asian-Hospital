@@ -17,6 +17,8 @@ class LargeMenuCell: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var button: UIButton!
     
+    weak var delegate: LargeMenuTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,5 +29,8 @@ class LargeMenuCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func cellButtonTapped(_ sender: UIButton) {
+        delegate?.tableViewCellButtonDidTapped(self)
+    }
 }

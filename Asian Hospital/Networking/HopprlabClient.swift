@@ -47,7 +47,7 @@ class HopprlabClient: APIClient {
                     let endpoint = HopprLab.requestdumpingStatus(username: userAccount.username)
                     let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
                     
-                    self.fetch(with: request) { (result) in
+                    self.fetchData(with: request) { (result) in
                         switch result {
                             case .success(_):
                                 completion(Result.success(userAccount))
@@ -74,7 +74,7 @@ class HopprlabClient: APIClient {
         let endpoint = HopprLab.sendUserAction
         let request = endpoint.request(with: parameters)
         
-        fetch(with: request) { (result) in
+        fetchData(with: request) { (result) in
             switch result {
                 case .success(_):
                     completion(Result.success(true))
@@ -84,39 +84,11 @@ class HopprlabClient: APIClient {
         }
     }
     
-    func requestPatientInformation(type: PatientInformationType, userAccount: UserAccount, completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
+    func requestPatientInformation(type: PatientInformationType, userAccount: UserAccount, parse: @escaping ([JSON]) -> [JSONDecodable], completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
         let endpoint = HopprLab.requestPatientInformation(type: type, username: userAccount.username)
         let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
         
-        fetch(with: request) { (result) in
-            switch result {
-            case .success(let json):
-                guard json.count != 0  else {
-                    completion(Result.failure(.jsonParsingFailure))
-                    return
-                }
-                
-                print(json)
-                
-//                switch type {
-//                    case .demographics:
-//
-//                }
-            case .failure(let error):
-                switch error {
-                    case .unauthorizedToken:
-                        self.requestToken(withUsername: userAccount.username, password: userAccount.password, completion: { (result) in
-                            switch result {
-                            case .success(let newUserAccount):
-                                self.requestPatientInformation(type: type, userAccount: newUserAccount, completion: completion)
-                            case .failure(let error):
-                                completion(Result.failure(error))
-                            }
-                        })
-                    default: completion(Result.failure(error))
-                }
-            }
-        }
+        fetch(with: request, parse: parse, completion: completion)
     }
     
     func search(withTerm term: String, limit: Int = 10, sortBy sortType: HopprLab.DoctorSortType = .name, completion: @escaping (Result<[Doctor], APIError>) -> Void) {

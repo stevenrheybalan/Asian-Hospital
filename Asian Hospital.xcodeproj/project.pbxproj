@@ -18,6 +18,8 @@
 		722586B6208032DA000D1A9A /* DeviceModelName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722586B5208032DA000D1A9A /* DeviceModelName.swift */; };
 		722586B820803C59000D1A9A /* PatientInformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722586B720803C59000D1A9A /* PatientInformationType.swift */; };
 		72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72312A1D2071D8F00050375E /* PatientLoginController.swift */; };
+		7239E0D5208868AA00975961 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239E0D4208868AA00975961 /* BarcodeController.swift */; };
+		7239E0D72088A70100975961 /* HerokuClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239E0D62088A70100975961 /* HerokuClient.swift */; };
 		7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246B1FE205F6EA50094DC45 /* AppDelegate.swift */; };
 		7246B204205F6EA50094DC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7246B202205F6EA50094DC45 /* Main.storyboard */; };
 		7246B206205F6EA50094DC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7246B205205F6EA50094DC45 /* Assets.xcassets */; };
@@ -75,6 +77,8 @@
 		722586B5208032DA000D1A9A /* DeviceModelName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModelName.swift; sourceTree = "<group>"; };
 		722586B720803C59000D1A9A /* PatientInformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientInformationType.swift; sourceTree = "<group>"; };
 		72312A1D2071D8F00050375E /* PatientLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLoginController.swift; sourceTree = "<group>"; };
+		7239E0D4208868AA00975961 /* BarcodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeController.swift; sourceTree = "<group>"; };
+		7239E0D62088A70100975961 /* HerokuClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuClient.swift; sourceTree = "<group>"; };
 		7246B1FB205F6EA50094DC45 /* Asian Hospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asian Hospital.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7246B1FE205F6EA50094DC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7246B203205F6EA50094DC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 				72312A1D2071D8F00050375E /* PatientLoginController.swift */,
 				72204B68207B2CB8007C4E84 /* PatientProfileController.swift */,
 				726BF29D20859B14006FE5DB /* HealthInformationController.swift */,
+				7239E0D4208868AA00975961 /* BarcodeController.swift */,
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
 				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
 				72A457E72074A887001EEC6B /* ContactController.swift */,
@@ -260,6 +265,7 @@
 				7246B220205F76BE0094DC45 /* Endpoint.swift */,
 				7246B21D205F76BD0094DC45 /* APIClient.swift */,
 				7246B21C205F76BD0094DC45 /* HopprlabClient.swift */,
+				7239E0D62088A70100975961 /* HerokuClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72BB65AB207DDA3C009A14E7 /* ContactDataSourceDelegate.swift in Sources */,
+				7239E0D5208868AA00975961 /* BarcodeController.swift in Sources */,
 				72DF56CB20736E790096F93F /* HomeMenuCellViewModel.swift in Sources */,
 				725DC57B20774F84007F4FC9 /* UserAccount.swift in Sources */,
 				72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */,
@@ -510,6 +517,7 @@
 				72626B6B20871A5A00462993 /* Medication.swift in Sources */,
 				72DF56C920736E480096F93F /* HomeMenuCell.swift in Sources */,
 				7246B223205F76BE0094DC45 /* JSONDecodable.swift in Sources */,
+				7239E0D72088A70100975961 /* HerokuClient.swift in Sources */,
 				7246B1FF205F6EA50094DC45 /* AppDelegate.swift in Sources */,
 				72062C0620735588001640CB /* HomeController.swift in Sources */,
 				72A457E82074A887001EEC6B /* ContactController.swift in Sources */,
