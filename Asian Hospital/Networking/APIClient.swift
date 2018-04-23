@@ -1,6 +1,6 @@
 //
 //  APIClient.swift
-//  Mod
+//  Asian Hospital
 //
 //  Created by HopprLab on 19/03/2018.
 //  Copyright © 2018 Asian Hospital Inc. All rights reserved.
@@ -17,6 +17,7 @@ enum APIError: Error {
     case unauthorizedToken
     case activationOnProgress
     case noRecordFound
+    case failedWithMessage(ErrorMessage)
     
     var localizedDescription: String {
         switch self {
@@ -28,6 +29,7 @@ enum APIError: Error {
             case .unauthorizedToken: return "Token is Invalid"
             case .activationOnProgress: return "Activation is on Progress"
             case .noRecordFound: return "No Record Found"
+            case .failedWithMessage(let message): return message.description
         }
     }
 }
@@ -76,13 +78,25 @@ extension APIClient {
                 return
             }
             
-            if httpResponse.statusCode == 200 {
-                if let data = data {
-                    completion(Result.success(data))
-                }else {
-                    completion(Result.failure(.invalidData))
+            guard let data = data else {
+                completion(Result.failure(.invalidData))
+                return
+            }
+            
+            switch httpResponse.statusCode {
+            case 200:
+               completion(Result.success(data))
+            case 400:
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON, let errorMessage = ErrorMessage(json: json) {
+                        completion(Result.failure(.failedWithMessage(errorMessage)))
+                    }else {
+                        completion(Result.failure(.invalidData))
+                    }
+                }catch {
+                    completion(Result.failure(.jsonConversionFailure))
                 }
-            }else {
+            default:
                 completion(Result.failure(.responseUnsuccessful))
             }
         }

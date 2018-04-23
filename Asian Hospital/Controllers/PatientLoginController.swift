@@ -55,9 +55,12 @@ class PatientLoginController: UIViewController {
                         }
                     }
                 case .failure(let error):
-                    SCLAlertView().showError("Error", subTitle: "There is something went wrong. Please try again.")
-                    
-                    print("Failed: \(error.localizedDescription)")
+                    switch error {
+                    case .failedWithMessage(let message):
+                        SCLAlertView().showError("Error", subTitle: message.description)
+                    default:
+                        SCLAlertView().showError("Error", subTitle: "There is something went wrong. Please try again.")
+                    }
                 }
             }
         }

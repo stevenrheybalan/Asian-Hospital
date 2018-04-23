@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C8193CEC061E5D6EA1ABCE5 /* Pods_Asian_Hospital.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */; };
 		7201F5F6207F74DA00D19015 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201F5F5207F74DA00D19015 /* UserAction.swift */; };
+		7202E85E20898F78007E2840 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202E85D20898F78007E2840 /* ErrorMessage.swift */; };
 		72062C0620735588001640CB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0520735588001640CB /* HomeController.swift */; };
 		72062C0820735AF7001640CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0720735AF7001640CB /* Constants.swift */; };
 		72062C0A20736B85001640CB /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72062C0920736B85001640CB /* HomeDataSource.swift */; };
@@ -68,6 +69,7 @@
 		0B9BA52C05C792FDDA3AD470 /* Pods_Asian_Hospital.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asian_Hospital.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C2591453A19E04D1B5C95C /* Pods-Asian Hospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asian Hospital.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital.release.xcconfig"; sourceTree = "<group>"; };
 		7201F5F5207F74DA00D19015 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
+		7202E85D20898F78007E2840 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		72062C0520735588001640CB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		72062C0720735AF7001640CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72062C0920736B85001640CB /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7202E85C20898F59007E2840 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				7202E85D20898F78007E2840 /* ErrorMessage.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		722586BB20803FCE000D1A9A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +229,7 @@
 		7246B214205F75EB0094DC45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7202E85C20898F59007E2840 /* Error */,
 				722586BC20803FED000D1A9A /* Doctor */,
 				722586BB20803FCE000D1A9A /* Profile */,
 				72E40249206A2192004B6CE6 /* Contact.swift */,
@@ -243,11 +254,11 @@
 			isa = PBXGroup;
 			children = (
 				72062C0520735588001640CB /* HomeController.swift */,
-				72A457E320745E92001EEC6B /* DoctorsController.swift */,
 				72312A1D2071D8F00050375E /* PatientLoginController.swift */,
 				72204B68207B2CB8007C4E84 /* PatientProfileController.swift */,
 				726BF29D20859B14006FE5DB /* HealthInformationController.swift */,
 				7239E0D4208868AA00975961 /* BarcodeController.swift */,
+				72A457E320745E92001EEC6B /* DoctorsController.swift */,
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
 				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
 				72A457E72074A887001EEC6B /* ContactController.swift */,
@@ -474,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72BB65AB207DDA3C009A14E7 /* ContactDataSourceDelegate.swift in Sources */,
+				7202E85E20898F78007E2840 /* ErrorMessage.swift in Sources */,
 				7239E0D5208868AA00975961 /* BarcodeController.swift in Sources */,
 				72DF56CB20736E790096F93F /* HomeMenuCellViewModel.swift in Sources */,
 				725DC57B20774F84007F4FC9 /* UserAccount.swift in Sources */,

@@ -51,6 +51,17 @@ class DoctorsController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: NAVIGATION
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDoctorDetails",
+            let doctorDetailsVC = segue.destination as? DoctorDetailController,
+            let indexPath = tableView.indexPathForSelectedRow {
+            
+            doctorDetailsVC.doctor = doctors[indexPath.row]
+        }
+    }
+    
     // MARK: METHODS
     
     func setupNavBar() {

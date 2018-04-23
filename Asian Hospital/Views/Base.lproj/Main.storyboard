@@ -1021,6 +1021,9 @@
                             <outlet property="delegate" destination="q05-Jd-2lg" id="Ikc-lN-TZ1"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Dpe-MH-BLx" kind="show" identifier="showDoctorDetails" id="wl3-BD-uhO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8h-YO-Fmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
