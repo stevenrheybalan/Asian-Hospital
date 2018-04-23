@@ -84,6 +84,16 @@ extension ContactDataSourceDelegate: UITableViewDelegate {
         default: break
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        let item = tableViewItems[section].items[row].subtitle
+        let formattedContactNumber = item.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        guard let url = URL(string: "tel://\(formattedContactNumber)") else { return }
+        
+        UIApplication.shared.open(url)
+    }
 }
 
 extension ContactDataSourceDelegate: UICollectionViewDataSource {
@@ -125,4 +135,3 @@ extension ContactDataSourceDelegate: UICollectionViewDelegate {
         viewController.present(safariVC, animated: true, completion: nil)
     }
 }
-
