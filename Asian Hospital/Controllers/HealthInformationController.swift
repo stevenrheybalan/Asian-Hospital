@@ -12,8 +12,14 @@ class HealthInformationController: UITableViewController {
     
     var informationType: PatientInformationType!
     
+    lazy var dataSource: HealthInformationDataSource = {
+       return HealthInformationDataSource(informationType: informationType)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = dataSource
         
         title = informationType.rawValue
     }

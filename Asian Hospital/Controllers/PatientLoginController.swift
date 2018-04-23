@@ -57,7 +57,7 @@ class PatientLoginController: UIViewController {
                 case .failure(let error):
                     switch error {
                     case .failedWithMessage(let message):
-                        SCLAlertView().showError("Error", subTitle: message.description)
+                        SCLAlertView().showError("Invalid Credentials", subTitle: message.description)
                     default:
                         SCLAlertView().showError("Error", subTitle: "There is something went wrong. Please try again.")
                     }

@@ -109,6 +109,7 @@ class PatientProfileDataSourceDelegate: NSObject, UITableViewDataSource, UITable
             viewController.performSegue(withIdentifier: PatientProfileController.barcodeSegue, sender: viewController)
         }else if section == 2 && row == 1 {
             // Billing Details
+            viewController.performSegue(withIdentifier: PatientProfileController.billingSegue, sender: viewController)
         }
     }
 }

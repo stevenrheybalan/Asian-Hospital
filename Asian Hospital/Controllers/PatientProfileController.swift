@@ -14,6 +14,7 @@ class PatientProfileController: UITableViewController {
     @IBOutlet weak var greetingsLabel: UILabel!
     
     static let barcodeSegue = "showBarcode"
+    static let billingSegue = "showBillingDetails"
     private let healthInformationSegue = "showHealthInformation"
     
     lazy var dataSourceDelegate: PatientProfileDataSourceDelegate = {
@@ -103,9 +104,7 @@ class PatientProfileController: UITableViewController {
             return
         }
         
-        client.requestPatientInformation(type: .demographics, userAccount: userAccount, parse: { (jsonArray) -> [JSONDecodable] in
-            return jsonArray.compactMap { Demographics(json: $0) }
-        }) { (result) in
+        client.requestPatientInformation(type: .demographics, userAccount: userAccount) { (result) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 alertViewResponder.close()
                 
@@ -118,7 +117,6 @@ class PatientProfileController: UITableViewController {
                     self.demographics = demographics
                 case .failure(let error):
                     print(error)
-                    
                     SCLAlertView().showError("Oooops!", subTitle: "There is something went wrong. Please try again.").setDismissBlock {
                         self.dismiss(animated: true, completion: nil)
                     }

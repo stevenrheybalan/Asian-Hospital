@@ -52,6 +52,8 @@
 		72B27614207C5AA900D42CD2 /* LargeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B27613207C5AA900D42CD2 /* LargeMenuCell.swift */; };
 		72B2761A207C5CE900D42CD2 /* TableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B27619207C5CE900D42CD2 /* TableViewItem.swift */; };
 		72BB65AB207DDA3C009A14E7 /* ContactDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BB65AA207DDA3C009A14E7 /* ContactDataSourceDelegate.swift */; };
+		72CCAA56208DBFED00BDF8D7 /* Billing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CCAA55208DBFED00BDF8D7 /* Billing.swift */; };
+		72CCAA58208DCBBC00BDF8D7 /* BillingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CCAA57208DCBBC00BDF8D7 /* BillingController.swift */; };
 		72DF56C920736E480096F93F /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DF56C820736E480096F93F /* HomeMenuCell.swift */; };
 		72DF56CB20736E790096F93F /* HomeMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DF56CA20736E790096F93F /* HomeMenuCellViewModel.swift */; };
 		72E4024A206A2193004B6CE6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E40249206A2192004B6CE6 /* Contact.swift */; };
@@ -115,6 +117,8 @@
 		72B27613207C5AA900D42CD2 /* LargeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeMenuCell.swift; sourceTree = "<group>"; };
 		72B27619207C5CE900D42CD2 /* TableViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewItem.swift; sourceTree = "<group>"; };
 		72BB65AA207DDA3C009A14E7 /* ContactDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSourceDelegate.swift; sourceTree = "<group>"; };
+		72CCAA55208DBFED00BDF8D7 /* Billing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Billing.swift; sourceTree = "<group>"; };
+		72CCAA57208DCBBC00BDF8D7 /* BillingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingController.swift; sourceTree = "<group>"; };
 		72DF56C820736E480096F93F /* HomeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
 		72DF56CA20736E790096F93F /* HomeMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuCellViewModel.swift; sourceTree = "<group>"; };
 		72E40249206A2192004B6CE6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				72626B66208713CC00462993 /* Allergy.swift */,
 				72626B682087165800462993 /* Diagnosis.swift */,
 				72626B6A20871A5A00462993 /* Medication.swift */,
+				72CCAA55208DBFED00BDF8D7 /* Billing.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				72204B68207B2CB8007C4E84 /* PatientProfileController.swift */,
 				726BF29D20859B14006FE5DB /* HealthInformationController.swift */,
 				7239E0D4208868AA00975961 /* BarcodeController.swift */,
+				72CCAA57208DCBBC00BDF8D7 /* BillingController.swift */,
 				72A457E320745E92001EEC6B /* DoctorsController.swift */,
 				727715412060F269003B53FC /* DoctorDetailController.swift */,
 				72E40268206B2FEF004B6CE6 /* LocationController.swift */,
@@ -431,11 +437,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Asian Hospital/Pods-Asian Hospital-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
@@ -491,8 +499,10 @@
 				725DC57B20774F84007F4FC9 /* UserAccount.swift in Sources */,
 				72E40253206A2DFD004B6CE6 /* ContactCell.swift in Sources */,
 				72B2760E207B517300D42CD2 /* HorizontalMenuCell.swift in Sources */,
+				72CCAA58208DCBBC00BDF8D7 /* BillingController.swift in Sources */,
 				72B2761A207C5CE900D42CD2 /* TableViewItem.swift in Sources */,
 				72312A1E2071D8F00050375E /* PatientLoginController.swift in Sources */,
+				72CCAA56208DBFED00BDF8D7 /* Billing.swift in Sources */,
 				72062C0A20736B85001640CB /* HomeDataSource.swift in Sources */,
 				7246B225205F76BE0094DC45 /* Endpoint.swift in Sources */,
 				72A457E6207460ED001EEC6B /* DoctorsDataSource.swift in Sources */,

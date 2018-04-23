@@ -33,7 +33,7 @@ struct Constants {
             Item(title: PatientInformationType.diagnosis.rawValue, subtitle: "", image: #imageLiteral(resourceName: "Diagnosis")),
             Item(title: PatientInformationType.medications.rawValue, subtitle: "", image: #imageLiteral(resourceName: "Medications"))]),
         TableViewItem(title: "Summary", rowHeight: 184, hasCollectionView: false, items: [
-            Item(title: "Health Record Summary", subtitle: "Apple HealthKit", image: #imageLiteral(resourceName: "Heart"), buttonTitle: "Download")]),
+            Item(title: "Health Summary", subtitle: "Apple HealthKit", image: #imageLiteral(resourceName: "Heart"), buttonTitle: "Download")]),
         TableViewItem(title: "Others", rowHeight: 184, hasCollectionView: false, items: [
             Item(title: "Patient Barcode", subtitle: "Apple Wallet", image: #imageLiteral(resourceName: "Barcode"), buttonTitle: "Generate"),
             Item(title: "Billing Details", subtitle: "Inpatient Only", image: #imageLiteral(resourceName: "Bill"), buttonTitle: "Generate")])

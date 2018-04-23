@@ -8,12 +8,38 @@
 
 import UIKit
 
-class HealthInformationDataSource: NSObject, UITableViewDataSource {
+class HealthInformationDataSource: NSObject {
     
-    override init() {
+    private var patientInformation: PatientInformationType
+    private let client = HopprlabClient()
+ 
+    init(informationType: PatientInformationType) {
+        patientInformation = informationType
         super.init()
     }
     
+    // MARK: METHODS
+    
+    func getPatientData(type: PatientInformationType, completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
+        guard let userAccount = UserAccount.loadFromKeychain() else { return }
+        
+        client.requestPatientInformation(type: type, userAccount: userAccount) { (result) in
+            switch result {
+            case .success(let data):
+                switch type {
+                case .allergies: break
+                case .demographics: break
+                case .diagnosis: break
+                case .medications: break
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+extension HealthInformationDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

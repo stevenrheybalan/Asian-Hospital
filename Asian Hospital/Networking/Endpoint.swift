@@ -85,6 +85,7 @@ enum HopprLab {
     case requestdumpingStatus(username: String)
     case sendUserAction
     case requestPatientInformation(type: PatientInformationType, username: String)
+    case requestBillingInformation(username: String)
     // Doctor
     case searchDoctor(term: String, limit: Int?, sortBy: DoctorSortType?)
 }
@@ -96,29 +97,31 @@ extension HopprLab: Endpoint {
 
     var path: String {
         switch self {
-            case .requestToken: return "/openAPI/token"
-            case .requestdumpingStatus(let username): return "/openAPI/CheckDumpingStatus/\(username)"
-            case .sendUserAction: return "/openAPI/Audit/PostUserActions"
-            case .requestPatientInformation(let type, _): return "/openAPI/\(type.path)"
-            case .searchDoctor: return "/openAPI/Doctor/Info"
+        case .requestToken: return "/openAPI/token"
+        case .requestdumpingStatus(let username): return "/openAPI/CheckDumpingStatus/\(username)"
+        case .sendUserAction: return "/openAPI/Audit/PostUserActions"
+        case .requestPatientInformation(let type, _): return "/openAPI/\(type.path)"
+        case .requestBillingInformation(let username): return "/openAPI/GetPatientBill/\(username)"
+        case .searchDoctor: return "/openAPI/Doctor/Info"
         }
     }
 
     var queryItems: [URLQueryItem] {
         switch self {
-            case .requestToken: return []
-            case .requestdumpingStatus: return []
-            case .sendUserAction: return []
-            case .requestPatientInformation(_, let username):
-                return [
-                    URLQueryItem(name: "hn", value: username)
-                ]
-            case .searchDoctor(let term, let limit, let sortBy):
-                return [
-                    URLQueryItem(name: "term", value: term),
-                    URLQueryItem(name: "limit", value: limit?.description),
-                    URLQueryItem(name: "sort_by", value: sortBy?.description)
-                ]
+        case .requestToken: return []
+        case .requestdumpingStatus: return []
+        case .sendUserAction: return []
+        case .requestPatientInformation(_, let username):
+            return [
+                URLQueryItem(name: "hn", value: username)
+            ]
+        case .requestBillingInformation: return []
+        case .searchDoctor(let term, let limit, let sortBy):
+            return [
+                URLQueryItem(name: "term", value: term),
+                URLQueryItem(name: "limit", value: limit?.description),
+                URLQueryItem(name: "sort_by", value: sortBy?.description)
+            ]
         }
     }
 }

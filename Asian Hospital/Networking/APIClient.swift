@@ -12,7 +12,7 @@ enum APIError: Error {
     case requestFailed
     case jsonConversionFailure
     case invalidData
-    case responseUnsuccessful
+    case responseUnsuccessful(statusCode: Int)
     case jsonParsingFailure
     case unauthorizedToken
     case activationOnProgress
@@ -52,7 +52,8 @@ extension APIClient {
                 return
             }
             
-            if httpResponse.statusCode == 200 {
+            switch httpResponse.statusCode {
+            case 200:
                 if let data = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
@@ -63,8 +64,21 @@ extension APIClient {
                 }else {
                     completion(nil, .invalidData)
                 }
-            }else {
-                completion(nil, .responseUnsuccessful)
+            case 400:
+                do {
+                    if let data = data,
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON,
+                        let errorMessage = ErrorMessage(json: json) {
+                        
+                        completion(nil, .failedWithMessage(errorMessage))
+                    }else {
+                        completion(nil, .invalidData)
+                    }
+                }catch {
+                    completion(nil, .jsonConversionFailure)
+                }
+            default:
+                completion(nil, .responseUnsuccessful(statusCode: httpResponse.statusCode))
             }
         }
         
@@ -86,18 +100,8 @@ extension APIClient {
             switch httpResponse.statusCode {
             case 200:
                completion(Result.success(data))
-            case 400:
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON, let errorMessage = ErrorMessage(json: json) {
-                        completion(Result.failure(.failedWithMessage(errorMessage)))
-                    }else {
-                        completion(Result.failure(.invalidData))
-                    }
-                }catch {
-                    completion(Result.failure(.jsonConversionFailure))
-                }
             default:
-                completion(Result.failure(.responseUnsuccessful))
+                completion(Result.failure(.responseUnsuccessful(statusCode: httpResponse.statusCode)))
             }
         }
         
@@ -160,10 +164,7 @@ extension APIClient {
                 completion(Result.failure(.requestFailed))
                 return
             }
-            
-            print("Request \(request.url!)")
-            print("Status code: \(httpResponse.statusCode)")
-            
+
             switch httpResponse.statusCode {
                 case 200:
                     guard let data = data else {

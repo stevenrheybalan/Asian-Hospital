@@ -84,11 +84,31 @@ class HopprlabClient: APIClient {
         }
     }
     
-    func requestPatientInformation(type: PatientInformationType, userAccount: UserAccount, parse: @escaping ([JSON]) -> [JSONDecodable], completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
+    func requestPatientInformation(type: PatientInformationType, userAccount: UserAccount, completion: @escaping (Result<[JSONDecodable], APIError>) -> Void) {
         let endpoint = HopprLab.requestPatientInformation(type: type, username: userAccount.username)
         let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
         
-        fetch(with: request, parse: parse, completion: completion)
+        fetch(with: request, parse: { (jsonArray) -> [JSONDecodable] in
+            switch type {
+            case .demographics:
+                return jsonArray.compactMap { Demographics(json: $0) }
+            case .allergies:
+                return jsonArray.compactMap { Allergy(json: $0) }
+            case .diagnosis:
+                return jsonArray.compactMap { Diagnosis(json: $0) }
+            case .medications:
+                return jsonArray.compactMap { Medication(json: $0) }
+            }
+        }, completion: completion)
+    }
+    
+    func requestBillingInformation(userAccount: UserAccount, completion: @escaping (Result<Billing, APIError>) -> Void) {
+        let endpoint = HopprLab.requestBillingInformation(username: userAccount.username)
+        let request = endpoint.requestWithAuthorizationHeader(oauthToken: userAccount.accessToken)
+        
+        fetch(with: request, parse: { (json: [String: AnyObject]) -> Billing? in
+            return Billing(json: json)
+        }, completion: completion)
     }
     
     func search(withTerm term: String, limit: Int = 10, sortBy sortType: HopprLab.DoctorSortType = .name, completion: @escaping (Result<[Doctor], APIError>) -> Void) {
